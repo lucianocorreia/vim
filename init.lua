@@ -55,7 +55,23 @@ require('lazy').setup({
     },
 
     -- {
-    --     'nvimdev/lspsaga.nvim',
+    --     'nvim-treesitter/nvim-treesitter-context',
+    --     config = function()
+    --         require 'treesitter-context'.setup {
+    --             enable = true,      -- Enable this plugin (Can be enabled/disabled later via commands)
+    --             max_lines = 0,      -- How many lines the window should span. Values <= 0 mean no limit.
+    --             min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+    --             line_numbers = true,
+    --             multiline_threshold = 20, -- Maximum number of lines to show for a single context
+    --             trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+    --             mode = 'cursor',    -- Line used to calculate context. Choices: 'cursor', 'topline'
+    --             -- Separator between context and content. Should be a single character string, like '-'.
+    --             -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+    --             separator = nil,
+    --             zindex = 20, -- The Z-index of the context window
+    --             on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+    --         }
+    --     end,
     --     dependencies = {
     --         'nvim-treesitter/nvim-treesitter',
     --         'nvim-tree/nvim-web-devicons',
@@ -103,14 +119,14 @@ require('lazy').setup({
         },
     },
 
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     priority = 1000,
-    --     config = function()
-    --         vim.cmd('colorscheme catppuccin-mocha')
-    --     end,
-    -- },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            vim.cmd('colorscheme catppuccin-mocha')
+        end,
+    },
 
     -- {
     --     -- Theme inspired by Atom
@@ -129,18 +145,18 @@ require('lazy').setup({
     --         vim.cmd [[colorscheme tokyonight-night]]
     --     end,
     -- },
-    {
-        'sainnhe/gruvbox-material',
-        priority = 1000,
-        config = function()
-            -- gruvbox-material hard
-            vim.g.gruvbox_material_background = "hard"
-            vim.g.gruvbox_material_disable_italic_comment = '0'
-            vim.g.gruvbox_material_enable_italic = '1'
-            vim.g.gruvbox_material_better_performance = 1
-            vim.cmd('colorscheme gruvbox-material')
-        end,
-    },
+    -- {
+    --     'sainnhe/gruvbox-material',
+    --     priority = 1000,
+    --     config = function()
+    --         -- gruvbox-material hard
+    --         vim.g.gruvbox_material_background = "hard"
+    --         vim.g.gruvbox_material_disable_italic_comment = '0'
+    --         vim.g.gruvbox_material_enable_italic = '1'
+    --         vim.g.gruvbox_material_better_performance = 1
+    --         vim.cmd('colorscheme gruvbox-material')
+    --     end,
+    -- },
 
     {
         -- Set lualine as statusline
@@ -149,7 +165,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = true,
-                theme = 'gruvbox-material',
+                theme = 'catppuccin-mocha',
                 component_separators = '|',
                 section_separators = '',
             },
@@ -265,6 +281,36 @@ vim.o.termguicolors = true
 KEYMAPS
 =====================================================================
 --]]
+
+-- Save
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>', { noremap = true, silent = true })
+
+-- better window movement
+vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
+
+-- Move lines
+vim.keymap.set("n", "<S-Up>", ":m-2<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<S-Down>", ":m+<CR>", {noremap = true, silent = true})
+vim.keymap.set("i", "<S-Up>", "<Esc>:m-2<CR>", {noremap = true, silent = true})
+vim.keymap.set("i", "<S-Down>", "<Esc>:m+<CR>", {noremap = true, silent = true})
+
+-- better paste
+vim.keymap.set('n', '<C-y>', 'yiw', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-p>', 'viwp', { noremap = true, silent = true })
+
+-- Paste
+vim.keymap.set("v", "p", "_dP", { noremap = true, silent = true })
+
+-- hlsearch
+vim.keymap.set("n", "<leader>h", ":nohl<CR>", { noremap = true, silent = true })
+
+-- better identing
+vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
+vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`

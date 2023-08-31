@@ -95,7 +95,7 @@ require('lazy').setup({
     },
 
     -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim',  opts = {} },
+    { 'folke/which-key.nvim',    opts = {} },
     {
         -- Adds git releated signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
@@ -158,6 +158,21 @@ require('lazy').setup({
     --     end,
     -- },
 
+    -- { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
+
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
@@ -209,7 +224,7 @@ require('lazy').setup({
     },
 
     -- "gc" to comment visual regions/lines
-    { 'numToStr/Comment.nvim', opts = {} },
+    { 'numToStr/Comment.nvim',  opts = {} },
 
     -- Fuzzy Finder (files, lsp, etc)
     {
@@ -293,10 +308,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
 
 -- Move lines
-vim.keymap.set("n", "<S-Up>", ":m-2<CR>", {noremap = true, silent = true})
-vim.keymap.set("n", "<S-Down>", ":m+<CR>", {noremap = true, silent = true})
-vim.keymap.set("i", "<S-Up>", "<Esc>:m-2<CR>", {noremap = true, silent = true})
-vim.keymap.set("i", "<S-Down>", "<Esc>:m+<CR>", {noremap = true, silent = true})
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- better paste
 vim.keymap.set('n', '<C-y>', 'yiw', { noremap = true, silent = true })
@@ -330,6 +343,46 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     group = highlight_group,
     pattern = '*',
 })
+
+--[[
+=====================================================================
+CONFIGURE.PLUGINS.BUFFERLINE
+=====================================================================
+--]]
+-- require("bufferline").setup {
+--     options = {
+--         numbers = "none",                    -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+--         close_command = "Bdelete! %d",       -- can be a string | function, see "Mouse actions"
+--         right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+--         left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+--         middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
+--         hover = {
+--             enabled = true,
+--             delay = 200,
+--             reveal = { 'close' }
+--         },
+--         indicator = "▎",
+--         buffer_close_icon = "",
+--         -- buffer_close_icon = '',
+--         modified_icon = "●",
+--         close_icon = "",
+--         -- close_icon = '',
+--         left_trunc_marker = "",
+--         right_trunc_marker = "",
+--         max_name_length = 30,
+--         max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+--         tab_size = 20,
+--         offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+--         show_buffer_icons = true,
+--         show_buffer_close_icons = true,
+--         show_close_icon = true,
+--         show_tab_indicators = true,
+--         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+--         separator_style = "thin",   -- | "thick" | "thin" | { 'any', 'any' },
+--         enforce_regular_tabs = true,
+--         always_show_bufferline = true,
+--     },
+-- }
 
 --[[
 =====================================================================
@@ -566,6 +619,34 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
+local kind_icons = {
+    Text = "",
+    Method = "m",
+    Function = "",
+    Constructor = "",
+    Field = "",
+    Variable = "",
+    Class = "",
+    Interface = "",
+    Module = "",
+    Property = "",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = "",
+}
+
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -601,9 +682,29 @@ cmp.setup {
         --   end
         -- end, { 'i', 's' }),
     },
+    formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            -- Kind icons
+            vim_item.kind = string.format("%s ", kind_icons[vim_item.kind])
+            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+            vim_item.menu = ({
+                nvim_lsp = "[LSP]",
+                luasnip = "[Snippet]",
+                buffer = "[Buffer]",
+                path = "[Path]",
+            })[entry.source.name]
+            return vim_item
+        end,
+    },
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = "buffer" },
+        { name = "path" },
+        { name = 'nvim_lsp_signature_help' },
+        -- { name = 'cmp_tabnine' },
+        { name = 'crates' },
     },
 }
 

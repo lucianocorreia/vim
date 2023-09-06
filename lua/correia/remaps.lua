@@ -22,11 +22,7 @@ nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
-vnoremap(
-  "n",
-  [[:<c-u>let temp_variable=@"<CR>gvy:<c-u>let @/='\V<C-R>=escape(@",'/\')<CR>'<CR>:let @"=temp_variable<CR>]],
-  silent
-)
+
 nnoremap("<leader>[", "<C-o>")
 nnoremap("<leader>]", "<C-i>")
 
@@ -52,16 +48,16 @@ nnoremap("<leader>t", "<Cmd>sp<CR> <Cmd>term<CR> <Cmd>resize 20N<CR> i", silent)
 -- nnoremap("<Esc>", "<C-\\><C-n>", silent)
 tnoremap("<C-c><C-c>", "<C-\\><C-n>", silent)
 tnoremap("<D-v>", function()
-  local keys = vim.api.nvim_replace_termcodes("<C-\\><C-n>\"+pi", true, false, true)
-  vim.api.nvim_feedkeys(keys, "n", false)
+    local keys = vim.api.nvim_replace_termcodes("<C-\\><C-n>\"+pi", true, false, true)
+    vim.api.nvim_feedkeys(keys, "n", false)
 end, silent)
 
 -- writing
 -- nnoremap("<C-p>", "<Cmd>PencilToggle<CR><Cmd>echo \"Pencil Toggled\"<CR>")
 nnoremap("<C-s>", "<Cmd>set spell!<CR>", silent)
 
-inoremap("<C-e>", "<Cmd>Goyo<CR>", silent)
--- inoremap("<C-p>", "<Cmd>PencilToggle<CR><Cmd>echo \"Pencil Toggled\"<CR>")
+-- inoremap("<C-e>", "<Cmd>Goyo<CR>", silent)
+inoremap("<C-p>", "<Cmd>PencilToggle<CR><Cmd>echo \"Pencil Toggled\"<CR>")
 inoremap("<C-s>", "<Cmd>set spell!<CR>", silent)
 
 -- plugins
@@ -90,8 +86,8 @@ nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 nnoremap("<leader>w", "<Cmd>w<CR>")
 -- nnoremap("<leader>q", "<Cmd>q<CR>")
 nnoremap("<leader><C-o>", "<Cmd>!open %<CR><CR>", silent)
-nnoremap("J", "mzJ`z")
-vnoremap("J", "mzJ`z")
+-- nnoremap("J", "mzJ`z")
+-- vnoremap("J", "mzJ`z")
 
 -- Running Code
 nnoremap("<leader>cb", "<Cmd>Build<CR>", silent)

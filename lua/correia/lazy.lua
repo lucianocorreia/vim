@@ -27,7 +27,7 @@ require("lazy").setup({
         branch = "v2.x",
         dependencies = {
             -- LSP Support
-            { "neovim/nvim-lspconfig" },
+            { "neovim/nvim-lspconfig", },
             { "williamboman/mason.nvim" },
             { "williamboman/mason-lspconfig.nvim" },
             { "jay-babu/mason-nvim-dap.nvim" },

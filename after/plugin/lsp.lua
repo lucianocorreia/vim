@@ -178,3 +178,10 @@ require("mason-null-ls").setup({
     automatic_installation = false,
     handlers = {},
 })
+
+-- vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
+--   callback = function () vim.lsp.inlay_hint(0, true) end,
+-- })
+-- vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+--   callback = function () vim.lsp.inlay_hint(0, false) end,
+-- })

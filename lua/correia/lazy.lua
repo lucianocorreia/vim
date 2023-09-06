@@ -18,6 +18,9 @@ require("lazy").setup({
     { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
     { 'sainnhe/gruvbox-material', priority = 1000 },
 
+    -- Detect tabstop and shiftwidth automatically
+    { 'tpope/vim-sleuth' },
+
     -- lsp
     {
         "VonHeikemen/lsp-zero.nvim",
@@ -28,6 +31,7 @@ require("lazy").setup({
             { "williamboman/mason.nvim" },
             { "williamboman/mason-lspconfig.nvim" },
             { "jay-babu/mason-nvim-dap.nvim" },
+            { 'j-hui/fidget.nvim',                tag = 'legacy', opts = {} },
 
             -- null-ls
             { "jose-elias-alvarez/null-ls.nvim" },

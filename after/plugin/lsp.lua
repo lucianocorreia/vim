@@ -18,6 +18,7 @@ lsp.on_attach(function(client, bufnr)
     -- inoremap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     inoremap("<C-j>", function() vim.lsp.buf.signature_help() end, opts)
 
+    nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)
     -- nnoremap("<leader>m", function()
     --   vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     -- end, opts)

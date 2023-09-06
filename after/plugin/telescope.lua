@@ -7,20 +7,21 @@ nnoremap("<leader>b", telescope_builtin.buffers, silent)
 nnoremap("<leader>sw", telescope_builtin.live_grep, silent)
 nnoremap("<leader>sh", telescope_builtin.help_tags, silent)
 nnoremap("<leader>sd", telescope_builtin.diagnostics, silent)
+nnoremap("<leader>so", telescope_builtin.lsp_document_symbols, silent)
 
 vim.keymap.set('n', '<leader>sf', function()
     require('telescope.builtin').find_files(require('telescope.themes').get_dropdown {
-        previewer = false
+      previewer = false
     })
-end,
-{ desc = '[S]earch [F]iles' })
+  end,
+  { desc = '[S]earch [F]iles' })
 
 vim.keymap.set('n', '<leader>/', function()
-    -- You can pass additional configuration to telescope to change theme, layout, etc.
-    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 10,
-        previewer = false,
-    })
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 require("telescope").setup({
@@ -79,10 +80,10 @@ require("telescope").setup({
   },
   extensions = {
     fzf = {
-      fuzzy = true, -- false will only do exact matching
+      fuzzy = true,                   -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      override_file_sorter = true,    -- override the file sorter
+      case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
     },
     -- coc = {
     --   theme = 'ivy',

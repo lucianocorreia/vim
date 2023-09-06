@@ -4,7 +4,7 @@ local options = {
     tabstop = 4,
     shiftwidth = 4,
     expandtab = true,
-    showtabline = 2,
+    showtabline = 1,
     showmatch = true,
 
     number = true,

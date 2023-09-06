@@ -8,7 +8,7 @@ lsp.on_attach(function(client, bufnr)
     -- lsp.default_keymaps({ buffer = bufnr })
     local opts = { buffer = bufnr, silent = true }
 
-    nnoremap("<leader>.", function() vim.lsp.buf.code_action() end, opts)
+    nnoremap("<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     nnoremap("<leader>rn", function() vim.lsp.buf.rename() end, opts)
     nnoremap("<leader>gi", function() vim.lsp.buf.implementation() end, opts)
     nnoremap("<leader>gr", function() vim.lsp.buf.references() end, opts)

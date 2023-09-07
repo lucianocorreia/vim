@@ -78,7 +78,7 @@ local rust_tools = require('rust-tools')
 rust_tools.setup({
     server = {
         on_attach = function(_, bufnr)
-            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+            vim.keymap.set('n', '<leader>.', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
         end
     }
 })
@@ -181,7 +181,6 @@ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 local null_ls = require("null-ls")
 local null_opts = lsp.build_options("null-ls", {})
 
-
 local txt_formatter = {
     method = null_ls.methods.FORMATTING,
     filetypes = { "txt", "text" },
@@ -206,9 +205,3 @@ require("mason-null-ls").setup({
 
 require("inlay-hints").setup()
 
--- vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
---   callback = function () vim.lsp.inlay_hint(0, true) end,
--- })
--- vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
---   callback = function () vim.lsp.inlay_hint(0, false) end,
--- })

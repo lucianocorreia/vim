@@ -56,6 +56,45 @@ vnoremap('<leader>cf', function()
     })
 end)
 
+-- Whenever an LSP attaches to a buffer, we will run this function.
+--
+-- See `:help LspAttach` for more information about this autocmd event.
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('correia-lsp-attach-format', { clear = true }),
+    -- This is where we attach the autoformatting for reasonable clients
+    callback = function(args)
+        local client_id = args.data.client_id
+        local client = vim.lsp.get_client_by_id(client_id)
+        local bufnr = args.buf
+
+        -- Only attach to clients that support document formatting
+        if not client.server_capabilities.documentFormattingProvider then
+            return
+        end
+
+        -- Tsserver usually works poorly. Sorry you work with bad languages
+        -- You can remove this line if you know what you're doing :)
+        if client.name ~= 'rust_analyzer' then
+            return
+        end
+
+        -- Create an autocmd that will run *before* we save the buffer.
+        --  Run the formatting command for the LSP that has just attached.
+        vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format {
+                    async = false,
+                    filter = function(c)
+                        return c.id == client.id
+                    end,
+                }
+            end,
+        })
+    end,
+})
+
+
 -- lsp.format_mapping("<leader>ff", {
 --     format_opts = {
 --         async = false,

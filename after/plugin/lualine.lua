@@ -3,13 +3,61 @@ require("lualine").setup({
     options = {
         icons_enabled = true,
         theme = 'catppuccin-mocha',
+        -- theme = 'tokyonight-night',
         component_separators = '|',
         section_separators = '',
     },
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch' },
-        lualine_c = { 'filename', 'searchcount', 'selectioncount',
+        lualine_c = {
+            {
+                'diff',
+                colored = true, -- Displays a colored diff status if set to true
+                diff_color = {
+                    -- added = 'DiffAdd',    -- changes diff's added color
+                    -- modified = 'DiffChange',  -- changes diff's modified color
+                    -- removed = 'DiffDelete', -- changes diff's removed color
+                    added = { fg = "#a6e3a1" },
+                    modified = { fg = "#f9e2af" },
+                    removed = { fg = "#f38ba8" },
+                },
+                symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
+                source = nil,                                             -- A function that works as a data source for diff.
+            },
+            {
+                'filename',
+                file_status = true,    -- Displays file status (readonly status, modified status)
+                newfile_status = true, -- Display new file status (new file means no write after created)
+                path = 4,              -- 0: Just the filename
+                -- 1: Relative path
+                -- 2: Absolute path
+                -- 3: Absolute path, with tilde as the home directory
+                -- 4: Filename and parent dir, with tilde as the home directory
+                shorting_target = 40, -- Shortens path to leave 40 spaces in the window
+                -- for other components. (terrible name, any suggestions?)
+                symbols = {
+                    modified = '[+]',      -- Text to show when the file is modified.
+                    readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+                    unnamed = '[No Name]', -- Text to show for unnamed buffers.
+                    newfile = '[New]',     -- Text to show for newly created file before first write
+                }
+            },
+            -- {
+            --     'buffers',
+            --     show_filename_only = true,       -- Shows shortened relative path when set to false.
+            --     hide_filename_extension = false, -- Hide filename extension when set to true.
+            --     show_modified_status = true,     -- Shows indicator when the buffer is modified.
+
+            --     mode = 0,                        -- 0: Shows buffer name
+            --     -- 1: Shows buffer index
+            --     -- 2: Shows buffer name + buffer index
+            --     -- 3: Shows buffer number
+            --     -- 4: Shows buffer name + buffer number
+
+            --     max_length = vim.o.columns * 2 / 3, -- Maximum width of buffers component,
+            -- },
+            'searchcount', 'selectioncount',
             -- {
             --     function() return require("nvim-navic").get_location() end,
             --     cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
@@ -25,17 +73,7 @@ require("lualine").setup({
             --     cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
             --     color = { fg = '#cba6f7' },
             -- },
-            {
-                'diff',
-                colored = true,                                           -- Displays a colored diff status if set to true
-                diff_color = {
-                    added    = 'LuaLineDiffAdd',                          -- Changes the diff's added color
-                    modified = 'LuaLineDiffChange',                       -- Changes the diff's modified color
-                    removed  = 'LuaLineDiffDelete',                       -- Changes the diff's removed color you
-                },
-                symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
-                source = nil,                                             -- A function that works as a data source for diff.
-            }, 'encoding', 'fileformat', 'filetype' },
+            'encoding', 'fileformat', 'filetype' },
         lualine_y = {
             {
                 'diagnostics',
@@ -56,4 +94,5 @@ require("lualine").setup({
         },
         lualine_z = { 'progress', 'location' },
     },
+    extensions = { 'nvim-tree', 'lazy' },
 })

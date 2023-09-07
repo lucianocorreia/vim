@@ -19,13 +19,30 @@ lsp.on_attach(function(client, bufnr)
     inoremap("<C-j>", function() vim.lsp.buf.signature_help() end, opts)
 
     nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)
-    -- nnoremap("<leader>m", function()
-    --   vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-    -- end, opts)
 
-    -- xnoremap("<leader>m", function()
-    --   vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-    -- end, opts)
+    if client.server_capabilities.documentHighlightProvider then
+        vim.cmd [[
+    hi! LspReferenceRead guibg=#585b70
+    hi! LspReferenceText  guibg=#585b70
+    hi! LspReferenceWrite  guibg=#585b70 ]]
+        vim.api.nvim_create_augroup('lsp_document_highlight', {
+            clear = false
+        })
+        vim.api.nvim_clear_autocmds({
+            buffer = bufnr,
+            group = 'lsp_document_highlight',
+        })
+        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            group = 'lsp_document_highlight',
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+        })
+        vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            group = 'lsp_document_highlight',
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+        })
+    end
 end)
 
 nnoremap('<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
@@ -38,6 +55,7 @@ vnoremap('<leader>cf', function()
         }
     })
 end)
+
 -- lsp.format_mapping("<leader>ff", {
 --     format_opts = {
 --         async = false,

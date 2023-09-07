@@ -92,8 +92,8 @@ nnoremap("<leader><C-o>", "<Cmd>!open %<CR><CR>", silent)
 -- Running Code
 nnoremap("<leader>cb", "<Cmd>Build<CR>", silent)
 nnoremap("<leader>cd", "<Cmd>DebugBuild<CR>", silent)
-nnoremap("<leader>cl", "<Cmd>Run<CR>", silent)
-nnoremap("<leader>cr", "<Cmd>Ha<CR>", silent)
+nnoremap("<leader>cx", "<Cmd>Run<CR>", silent)
+nnoremap("<leader>ct", "<Cmd>Test<CR>", silent)
 
 -- lsp
 nnoremap("<leader>sh", "<Cmd>RustEnableInlayHints<CR>", silent)

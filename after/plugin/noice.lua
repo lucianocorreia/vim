@@ -1,152 +1,30 @@
 -- local notify = require("notify")
 -- notify.setup({ fps = 120, render = "minimal", timeout = 500 })
 
-require("noice").setup({
-    lsp = {
-        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-        override = {
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-            ["vim.lsp.util.stylize_markdown"] = true,
-            ["cmp.entry.get_documentation"] = true,
-        },
-    },
-    messages = {
-        enabled = true,         -- enables the Noice messages UI
-        view = "notify",         -- default view for messages
-        view_error = "messages",   -- view for errors
-        view_warn = "notify",    -- view for warnings
-        view_history = "messages", -- view for :messages
-        view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
-    },
-    -- you can enable a preset for easier configuration
-    presets = {
-        bottom_search = true,         -- use a classic bottom cmdline for search
-        command_palette = true,       -- position the cmdline and popupmenu together
-        long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = true,        -- add a border to hover docs and signature help
-    },
-})
-
 -- require("noice").setup({
---   cmdline = {
---     enabled = true,
---     view = "cmdline_popup",
---     opts = {},
---     format = {
---       cmdline = { pattern = "^:", icon = "", lang = "vim" },
---       search_down = {
---         kind = "search",
---         pattern = "^/",
---         icon = " ",
---         lang = "regex",
---       },
---       search_up = {
---         kind = "search",
---         pattern = "^%?",
---         icon = " ",
---         lang = "regex",
---       },
---       bash = {
---         kind = "bash",
---         pattern = "^:%s*!",
---         icon = "$",
---         lang = "bash",
---       },
---       lua = { pattern = "^:%s*lua%s+", icon = "", lang = "lua" },
---       help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
---       search_and_replace = {
---         kind = "replace",
---         pattern = "^:%%?s/",
---         icon = " ",
---         lang = "regex",
---       },
---       search_and_replace_range = {
---         kind = "replace",
---         pattern = "^:'<,'>%%?s/",
---         icon = " ",
---         lang = "regex",
---       },
---       input = {},
---     },
---   },
---   commands = {
---     history = {
---       view = "split",
---       opts = { enter = true, format = "details" },
---       filter = {
---         any = {
---           { event = "notify" },
---           { error = true },
---           { warning = true },
---           { event = "msg_show", kind = { "" } },
---           { event = "lsp", kind = "message" },
+--     lsp = {
+--         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+--         override = {
+--             ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+--             ["vim.lsp.util.stylize_markdown"] = true,
+--             ["cmp.entry.get_documentation"] = true,
 --         },
---       },
 --     },
-
---     last = {
---       view = "popup",
---       opts = { enter = true, format = "details" },
---       filter = {
---         any = {
---           { event = "notify" },
---           { error = true },
---           { warning = true },
---           { event = "msg_show", kind = { "" } },
---           { event = "lsp", kind = "message" },
---         },
---       },
---       filter_opts = { count = 1 },
+--     messages = {
+--         enabled = true,         -- enables the Noice messages UI
+--         view = "notify",         -- default view for messages
+--         view_error = "messages",   -- view for errors
+--         view_warn = "notify",    -- view for warnings
+--         view_history = "messages", -- view for :messages
+--         view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
 --     },
-
---     errors = {
---       view = "popup",
---       opts = { enter = true, format = "details" },
---       filter = { error = true },
---       filter_opts = { reverse = true },
+--     -- you can enable a preset for easier configuration
+--     presets = {
+--         bottom_search = true,         -- use a classic bottom cmdline for search
+--         command_palette = true,       -- position the cmdline and popupmenu together
+--         long_message_to_split = true, -- long messages will be sent to a split
+--         inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+--         lsp_doc_border = true,        -- add a border to hover docs and signature help
 --     },
---   },
---   smart_move = {
---     enabled = true,
---     excluded_filetypes = { "cmp_menu", "cmp_docs", "notify" },
---   },
---   lsp = {
---     override = {
---       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
---       ["vim.lsp.util.stylize_markdown"] = true,
---       ["cmp.entry.get_documentation"] = true,
---     },
---   },
---   presets = {
---     bottom_search = false,
---     command_palette = false,
---     long_message_to_split = true,
---     inc_rename = false,
---     lsp_doc_border = true,
---   },
---   throttle = 1000 / 120,
---   routes = {
---     {
---       filter = { event = "msg_show", kind = "", find = "written" },
---       opts = { skip = true },
---     },
---   },
---   views = {
---     cmdline_popup = {
---       position = { row = vim.o.lines * 0.32, col = "50%" },
---       size = { width = 60, height = "auto" },
---     },
---     popupmenu = {
---       position = { row = vim.o.lines * 0.32 + 3, col = "50%" },
---       size = { width = 60, height = 10 },
---       border = { style = "rounded", padding = { 0, 1 } },
---       win_options = {
---         winhighlight = {
---           Normal = "Normal",
---           FloatBorder = "DiagnosticInfo",
---         },
---       },
---     },
---   },
 -- })
+

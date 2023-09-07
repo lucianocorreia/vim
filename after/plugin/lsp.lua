@@ -2,7 +2,7 @@ local lsp = require("lsp-zero").preset({})
 local Remap = require("correia.keymap")
 local inoremap = Remap.inoremap
 local nnoremap = Remap.nnoremap
-local xnoremap = Remap.xnoremap
+local vnoremap = Remap.vnoremap
 
 lsp.on_attach(function(client, bufnr)
     -- lsp.default_keymaps({ buffer = bufnr })
@@ -28,30 +28,39 @@ lsp.on_attach(function(client, bufnr)
     -- end, opts)
 end)
 
-vim.keymap.set('n', '<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
-lsp.format_mapping("<leader>ff", {
-    format_opts = {
-        async = false,
-        timeout_ms = 10000,
-    },
-    servers = {
-        ["rust_analyzer"] = { "rust" },
-        ["null-ls"] = {
-            "lua",
-            "c",
-            "cpp",
-            "json",
-            "javascript",
-            "typescript",
-            "typescriptreact",
-            "markdown",
-            "css",
-            "sass",
-            "scss",
-            "php",
-        },
-    },
-})
+nnoremap('<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
+vnoremap('<leader>cf', function()
+    vim.lsp.buf.format({
+        async = true,
+        range = {
+            ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
+            ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
+        }
+    })
+end)
+-- lsp.format_mapping("<leader>ff", {
+--     format_opts = {
+--         async = false,
+--         timeout_ms = 10000,
+--     },
+--     servers = {
+--         ["rust_analyzer"] = { "rust" },
+--         ["null-ls"] = {
+--             "lua",
+--             "c",
+--             "cpp",
+--             "json",
+--             "javascript",
+--             "typescript",
+--             "typescriptreact",
+--             "markdown",
+--             "css",
+--             "sass",
+--             "scss",
+--             "php",
+--         },
+--     },
+-- })
 
 lsp.skip_server_setup({ 'rust_analyzer' })
 

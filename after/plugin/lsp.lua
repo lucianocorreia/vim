@@ -28,7 +28,6 @@ lsp.on_attach(function(client, bufnr)
     -- end, opts)
 end)
 
-
 vim.keymap.set('n', '<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
 lsp.format_mapping("<leader>ff", {
     format_opts = {
@@ -54,8 +53,9 @@ lsp.format_mapping("<leader>ff", {
     },
 })
 
-lsp.setup()
+lsp.skip_server_setup({ 'rust_analyzer' })
 
+lsp.setup()
 -- require("mason-nvim-dap").setup({
 --   ensure_installed = { "python", "cpp" },
 --   automatic_installation = true,
@@ -63,6 +63,22 @@ lsp.setup()
 --     function(config) require("mason-nvim-dap").default_setup(config) end,
 --   },
 -- })
+
+local rust_tools = require('rust-tools')
+
+rust_tools.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+        end
+    }
+})
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 local kind_icons = {
     Text = "",
@@ -178,6 +194,8 @@ require("mason-null-ls").setup({
     automatic_installation = false,
     handlers = {},
 })
+
+require("inlay-hints").setup()
 
 -- vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
 --   callback = function () vim.lsp.inlay_hint(0, true) end,

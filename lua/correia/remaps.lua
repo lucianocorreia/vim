@@ -95,6 +95,10 @@ nnoremap("<leader>cd", "<Cmd>DebugBuild<CR>", silent)
 nnoremap("<leader>cl", "<Cmd>Run<CR>", silent)
 nnoremap("<leader>cr", "<Cmd>Ha<CR>", silent)
 
+-- lsp
+nnoremap("<leader>sh", "<Cmd>RustEnableInlayHints<CR>", silent)
+nnoremap("<leader>hs", "<Cmd>RustDisableInlayHints<CR>", silent)
+
 -- gui only
 nnoremap("<D-->", "<Cmd>FontSizeDecrement<CR>", silent)
 nnoremap("<D-=>", "<Cmd>FontSizeIncrement<CR>", silent)

@@ -42,8 +42,8 @@ local options = {
     title = true,
     -- titlestring = "%t - Wvim",
     titlestring = "Neovim - %t",
-    guifont = "FiraCode Nerd Font:h18",
-    -- clipboard = "unnamedplus",
+    -- guifont = "FiraCode Nerd Font:h28",
+    clipboard = "unnamedplus",
 }
 
 -- vim.opt.nrformats:append("alpha") -- increment letters

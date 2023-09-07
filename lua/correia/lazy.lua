@@ -57,11 +57,15 @@ require("lazy").setup({
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
+            { "simrat39/inlay-hints.nvim" },
 
             -- Snippets
             { "L3MON4D3/LuaSnip",            version = "2.*" },
             { "rafamadriz/friendly-snippets" },
             { "honza/vim-snippets" },
+
+            -- rust tools
+            { "simrat39/rust-tools.nvim" },
         },
     },
 

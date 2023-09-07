@@ -3,27 +3,6 @@ local nnoremap = require("correia.keymap").nnoremap
 local telescope_builtin = require("telescope.builtin")
 local silent = { silent = true }
 
-nnoremap("<leader>b", telescope_builtin.buffers, silent)
-nnoremap("<leader>sw", telescope_builtin.live_grep, silent)
-nnoremap("<leader>sh", telescope_builtin.help_tags, silent)
-nnoremap("<leader>sd", telescope_builtin.diagnostics, silent)
-nnoremap("<leader>so", telescope_builtin.lsp_document_symbols, silent)
-
-vim.keymap.set('n', '<leader>sf', function()
-    require('telescope.builtin').find_files(require('telescope.themes').get_dropdown {
-      previewer = false
-    })
-  end,
-  { desc = '[S]earch [F]iles' })
-
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-
 require("telescope").setup({
   defaults = {
     prompt_prefix = " ",
@@ -77,6 +56,9 @@ require("telescope").setup({
       -- @usage don't include the filename in the search results
       only_sort_text = true,
     },
+    diagnostics = {
+      bufrn = 0,
+    },
   },
   extensions = {
     fzf = {
@@ -91,6 +73,27 @@ require("telescope").setup({
     -- }
   },
 })
+
+nnoremap("<leader><leader>", telescope_builtin.buffers, silent)
+nnoremap("<leader>sw", telescope_builtin.live_grep, silent)
+nnoremap("<leader>st", telescope_builtin.help_tags, silent)
+nnoremap("<leader>so", telescope_builtin.lsp_document_symbols, silent)
+nnoremap("<leader>sd", telescope_builtin.diagnostics, silent)
+
+nnoremap('<leader>sf', function()
+    require('telescope.builtin').find_files(require('telescope.themes').get_dropdown {
+      previewer = false
+    })
+  end,
+  { desc = '[S]earch [F]iles' })
+
+nnoremap('<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
 
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("lazygit")

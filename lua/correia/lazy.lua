@@ -144,6 +144,10 @@ require("lazy").setup({
     },
     { "nycrat/todo.nvim" },
     { "nycrat/gui-fonts.nvim" },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
 
     -- looks
     { "laytan/cloak.nvim" },
@@ -154,8 +158,5 @@ require("lazy").setup({
     {
         'goolord/alpha-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
-        end
     },
 })

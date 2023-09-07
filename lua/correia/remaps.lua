@@ -44,9 +44,9 @@ vnoremap("<D-j>", "J")
 -- vnoremap("<D-v>", "\"+p", silent)
 
 -- built in terminal
-nnoremap("<leader>t", "<Cmd>sp<CR> <Cmd>term<CR> <Cmd>resize 20N<CR> i", silent)
+nnoremap("<leader>t", "<Cmd>sp<CR> <Cmd>term<CR> <Cmd>resize 15<CR> i", silent)
 -- nnoremap("<Esc>", "<C-\\><C-n>", silent)
-tnoremap("<C-c><C-c>", "<C-\\><C-n>", silent)
+tnoremap("<C-c><C-c>", "<C-\\><C-n>:q<CR>", silent)
 tnoremap("<D-v>", function()
     local keys = vim.api.nvim_replace_termcodes("<C-\\><C-n>\"+pi", true, false, true)
     vim.api.nvim_feedkeys(keys, "n", false)

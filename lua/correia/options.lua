@@ -5,6 +5,7 @@ local options = {
     shiftwidth = 4,
     expandtab = true,
     showtabline = 1,
+    cmdheight = 1,
     showmatch = true,
 
     number = true,

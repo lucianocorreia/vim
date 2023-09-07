@@ -14,17 +14,17 @@ require("lualine").setup({
             --     function() return require("nvim-navic").get_location() end,
             --     cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
             -- },
-            {
-                function() return require("noice").api.status.mode.get() end,
-                cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            },
+            -- {
+            --     function() return require("noice").api.status.mode.get() end,
+            --     cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            -- },
         },
         lualine_x = {
-            {
-                function() return require("noice").api.status.command.get() end,
-                cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-                color = { fg = '#cba6f7' },
-            },
+            -- {
+            --     function() return require("noice").api.status.command.get() end,
+            --     cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+            --     color = { fg = '#cba6f7' },
+            -- },
             {
                 'diff',
                 colored = true,                                           -- Displays a colored diff status if set to true

@@ -25,7 +25,7 @@ require("lazy").setup({
     },
 
     -- Detect tabstop and shiftwidth automatically
-    { 'tpope/vim-sleuth' },
+    -- { 'tpope/vim-sleuth' },
 
     -- lsp
     {
@@ -84,7 +84,11 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
     { "windwp/nvim-autopairs" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "nvim-treesitter/nvim-treesitter",            build = ":TSUpdate" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" }
+    },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "kylechui/nvim-surround" },
 

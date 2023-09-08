@@ -10,7 +10,7 @@ local options = {
 
     number = true,
     relativenumber = false,
-    numberwidth = 4,
+    numberwidth = 5,
     incsearch = true,
     hlsearch = true,
     ignorecase = true,

@@ -73,7 +73,38 @@ require("lualine").setup({
             --     cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
             --     color = { fg = '#cba6f7' },
             -- },
-            'encoding', 'fileformat', 'filetype' },
+            -- {
+            --     function()
+            --         local lsps = vim.lsp.get_active_clients({ bufnr = vim.fn.bufnr() })
+            --         local icon = require("nvim-web-devicons").get_icon_by_filetype(
+            --             vim.api.nvim_buf_get_option(0, "filetype")
+            --         )
+            --         if lsps and #lsps > 0 then
+            --             local names = {}
+            --             for _, lsp in ipairs(lsps) do
+            --                 table.insert(names, lsp.name)
+            --             end
+            --             return string.format("%s %s", table.concat(names, ", "), icon)
+            --         else
+            --             return icon or ""
+            --         end
+            --     end,
+            --     on_click = function()
+            --         vim.api.nvim_command("LspInfo")
+            --     end,
+            --     color = function()
+            --         local _, color = require("nvim-web-devicons").get_icon_cterm_color_by_filetype(
+            --             vim.api.nvim_buf_get_option(0, "filetype")
+            --         )
+            --         return { fg = color }
+            --     end,
+            -- },
+            'encoding',
+            {
+                'filetype',
+                icon_only = true
+            },
+        },
         lualine_y = {
             {
                 'diagnostics',
@@ -94,5 +125,16 @@ require("lualine").setup({
         },
         lualine_z = { 'progress', 'location' },
     },
+    -- winbar = {
+    --     lualine_a = {
+    --         { "filetype", icon_only = true,    icon = { align = "left" } },
+    --         { "filename", file_status = false, path = 0 },
+    --     },
+    --     lualine_b = {},
+    --     lualine_c = { create_symbol_bar },
+    --     lualine_x = {},
+    --     lualine_y = {},
+    --     lualine_z = {},
+    -- },
     extensions = { 'nvim-tree', 'lazy' },
 })

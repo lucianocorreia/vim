@@ -17,12 +17,6 @@ require("lazy").setup({
 
     -- Colorscheme
     { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },
@@ -89,7 +83,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" }
     },
-    { "nvim-treesitter/nvim-treesitter-context" },
+    -- { "nvim-treesitter/nvim-treesitter-context" },
     -- { "kylechui/nvim-surround" },
 
     {

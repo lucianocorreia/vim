@@ -57,7 +57,7 @@ end, silent)
 nnoremap("<C-s>", "<Cmd>set spell!<CR>", silent)
 
 -- inoremap("<C-e>", "<Cmd>Goyo<CR>", silent)
-inoremap("<C-p>", "<Cmd>PencilToggle<CR><Cmd>echo \"Pencil Toggled\"<CR>")
+-- inoremap("<C-p>", "<Cmd>PencilToggle<CR><Cmd>echo \"Pencil Toggled\"<CR>")
 inoremap("<C-s>", "<Cmd>set spell!<CR>", silent)
 
 -- plugins

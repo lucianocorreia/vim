@@ -90,7 +90,7 @@ require("lazy").setup({
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" }
     },
     { "nvim-treesitter/nvim-treesitter-context" },
-    { "kylechui/nvim-surround" },
+    -- { "kylechui/nvim-surround" },
 
     {
         "utilyre/barbecue.nvim",
@@ -129,7 +129,7 @@ require("lazy").setup({
     --   { "nvim-telescope/telescope-dap.nvim" },
 
     -- writing
-    { "preservim/vim-pencil" },
+    -- { "preservim/vim-pencil" },
     {
         "iamcco/markdown-preview.nvim",
         build = "cd app && npm install",

@@ -131,8 +131,18 @@ lsp.setup()
 -- })
 
 local rust_tools = require('rust-tools')
+local ih = require("inlay-hints")
+ih.setup()
 
 rust_tools.setup({
+    tools = {
+        on_initialized = function()
+            ih.set_all()
+        end,
+        inlay_hints = {
+            auto = false,
+        },
+    },
     server = {
         on_attach = function(_, bufnr)
             vim.keymap.set('n', '<leader>.', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
@@ -142,7 +152,7 @@ rust_tools.setup({
     inlay_hints = {
         -- automatically set inlay hints (type hints)
         -- default: true
-        auto = true,
+        auto = false,
 
         -- Only show inlay hints for the current line
         only_current_line = false,
@@ -166,7 +176,7 @@ rust_tools.setup({
         max_len_align_padding = 1,
 
         -- whether to align to the extreme right or not
-        right_align = true,
+        right_align = false,
 
         -- padding from the right if right_align is true
         right_align_padding = 5,
@@ -231,7 +241,6 @@ cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         -- { name = 'cmp_tabnine' },
         { name = 'crates' },
-        { name = 'copilot' },
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -244,7 +253,6 @@ cmp.setup({
                 luasnip = "[Snp]",
                 buffer = "[Buf]",
                 path = "[Pth]",
-                copilot = "[Cpl]",
             })[entry.source.name]
             return vim_item
         end,
@@ -297,5 +305,3 @@ require("mason-null-ls").setup({
     automatic_installation = false,
     handlers = {},
 })
-
-require("inlay-hints").setup()

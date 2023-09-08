@@ -231,18 +231,20 @@ cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         -- { name = 'cmp_tabnine' },
         { name = 'crates' },
+        { name = 'copilot' },
     },
     formatting = {
-        fields = { "abbr", "menu", "kind" },
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
             -- Kind icons
             vim_item.kind = string.format("%s ", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             vim_item.menu = ({
-                nvim_lsp = "[LSP]",
-                luasnip = "[Snippet]",
-                buffer = "[Buffer]",
-                path = "[Path]",
+                nvim_lsp = "[Lsp]",
+                luasnip = "[Snp]",
+                buffer = "[Buf]",
+                path = "[Pth]",
+                copilot = "[Cpl]",
             })[entry.source.name]
             return vim_item
         end,

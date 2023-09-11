@@ -68,6 +68,7 @@ require("lazy").setup({
 
             -- rust tools
             { "simrat39/rust-tools.nvim" },
+            { "fatih/vim-go" },
         },
     },
 

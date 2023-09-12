@@ -20,6 +20,10 @@ lsp.on_attach(function(client, bufnr)
 
     nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)
 
+
+    if client.name ~= 'gopls' then
+    end
+
     if client.server_capabilities.documentHighlightProvider then
         vim.cmd [[
     hi! LspReferenceRead guibg=#585b70
@@ -185,6 +189,25 @@ rust_tools.setup({
         highlight = "Comment",
     },
 })
+
+-- require('lspconfig').gopls.setup({
+--   on_attach = function(c, b)
+--     ih.on_attach(c, b)
+--   end,
+--   settings = {
+--     gopls = {
+--       hints = {
+--         assignVariableTypes = true,
+--         compositeLiteralFields = true,
+--         compositeLiteralTypes = true,
+--         constantValues = true,
+--         functionTypeParameters = true,
+--         parameterNames = true,
+--         rangeVariableTypes = true,
+--       },
+--     },
+--   },
+-- })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "FTerm.nvim": { "branch": "master", "commit": "d1320892cc2ebab472935242d9d992a2c9570180" },
   "LuaSnip": { "branch": "master", "commit": "0b4950a237ce441a6a3a947d501622453f6860ea" },
   "alpha-nvim": { "branch": "main", "commit": "712dc1dccd4fd515ef8bd126b3718f79d3e23b0d" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },

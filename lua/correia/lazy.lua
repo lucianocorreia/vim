@@ -172,4 +172,18 @@ require("lazy").setup({
         'goolord/alpha-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
+
+    -- terminal
+    {
+        "numToStr/FTerm.nvim",
+        config = function(_, opts)
+            require 'FTerm'.setup({
+                border     = 'double',
+                dimensions = {
+                    height = 0.8,
+                    width = 0.8,
+                },
+            })
+        end
+    }
 })

@@ -20,7 +20,6 @@ lsp.on_attach(function(client, bufnr)
 
     nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)
 
-
     if client.name ~= 'gopls' then
     end
 

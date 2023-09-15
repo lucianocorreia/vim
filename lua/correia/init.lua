@@ -8,3 +8,4 @@ vim.cmd([[colorscheme catppuccin-mocha]]) -- some issues with gitgutter color if
 
 -- github_dark
 -- vim.cmd('colorscheme github_dark_tritanopia')
+

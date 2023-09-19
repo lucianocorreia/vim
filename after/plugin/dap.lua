@@ -1,6 +1,7 @@
 -- local nnoremap = require("correia.keymap").nnoremap
 -- local dap = require("dap")
 -- local dapui = require("dapui")
+-- local dapgo = require("dap-go")
 
 -- local silent = { silent = true }
 
@@ -37,6 +38,8 @@
 -- })
 
 -- require("nvim-dap-virtual-text").setup()
+
+-- dapgo.setup()
 
 -- -- require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 
@@ -82,5 +85,5 @@
 --   },
 -- }
 
--- dap.configurations.c = dap.configurations.cpp
+-- -- dap.configurations.c = dap.configurations.cpp
 -- dap.configurations.rust = dap.configurations.cpp

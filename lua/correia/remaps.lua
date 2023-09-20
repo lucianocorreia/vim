@@ -83,8 +83,8 @@ vnoremap(">", ">gv", silent)
 nnoremap("<leader>h", ":nohl<CR>", silent)
 
 -- misc
-vnoremap("<leader>p", "\"_dp")
-vnoremap("<leader>P", "\"_dP")
+-- vnoremap("<leader>p", "\"_dp")
+-- vnoremap("<leader>P", "\"_dP")
 nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 nnoremap("<leader>w", "<Cmd>w<CR>")
 -- nnoremap("<leader>q", "<Cmd>q<CR>")
@@ -112,3 +112,11 @@ nnoremap("<D-m>", "<Cmd>FontIndexIncrement<CR>")
 nnoremap("<D-n>", "<Cmd>FontIndexDecrement<CR>")
 inoremap("<D-m>", "<Cmd>FontIndexIncrement<CR>")
 inoremap("<D-n>", "<Cmd>FontIndexDecrement<CR>")
+
+-- Troble
+nnoremap("<leader>xx", function() require("trouble").open() end)
+nnoremap("<leader>xw", function() require("trouble").open("workspace_diagnostics") end)
+nnoremap("<leader>xd", function() require("trouble").open("document_diagnostics") end)
+nnoremap("<leader>xq", function() require("trouble").open("quickfix") end)
+nnoremap("<leader>xl", function() require("trouble").open("loclist") end)
+nnoremap("gR", function() require("trouble").open("lsp_references") end)

@@ -77,12 +77,12 @@ require("lazy").setup({
             -- rust tools
             { "simrat39/rust-tools.nvim" },
             { "fatih/vim-go" },
-            {
-                "ray-x/lsp_signature.nvim",
-                event = "VeryLazy",
-                opts = {},
-                config = function(_, opts) require 'lsp_signature'.setup(opts) end
-            },
+            -- {
+            --     "ray-x/lsp_signature.nvim",
+            --     event = "VeryLazy",
+            --     opts = {},
+            --     config = function(_, opts) require 'lsp_signature'.setup(opts) end
+            -- },
         },
     },
 
@@ -149,21 +149,21 @@ require("lazy").setup({
     { "mbbill/undotree" },
     { "uga-rosa/ccc.nvim" },
     { "nvim-pack/nvim-spectre" },
-    -- {
-    --     "folke/noice.nvim",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         -- add any options here
-    --     },
-    --     dependencies = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         "MunifTanjim/nui.nvim",
-    --         -- OPTIONAL:
-    --         --   `nvim-notify` is only needed, if you want to use the notification view.
-    --         --   If not available, we use `mini` as the fallback
-    --         "rcarriga/nvim-notify",
-    --     }
-    -- },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
     { "nycrat/todo.nvim" },
     { "nycrat/gui-fonts.nvim" },
     {
@@ -180,6 +180,15 @@ require("lazy").setup({
     {
         'goolord/alpha-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
+
+    -- trouble
+    {
+        "folke/trouble.nvim",
+        event = "BufRead",
+        opts = {
+            
+        },
     },
 
     -- terminal

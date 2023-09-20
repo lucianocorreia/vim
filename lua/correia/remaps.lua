@@ -82,11 +82,15 @@ vnoremap(">", ">gv", silent)
 -- hlsearch
 nnoremap("<leader>h", ":nohl<CR>", silent)
 
+-- wrap
+nnoremap("<leader>w", "<Cmd>set wrap<CR>", silent)
+nnoremap("<leader>W", "<cmd>set nowrap<cr>", silent)
+
 -- misc
 -- vnoremap("<leader>p", "\"_dp")
 -- vnoremap("<leader>P", "\"_dP")
 nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
-nnoremap("<leader>w", "<Cmd>w<CR>")
+nnoremap("<C-s>", "<Cmd>w<CR>")
 -- nnoremap("<leader>q", "<Cmd>q<CR>")
 nnoremap("<leader><C-o>", "<Cmd>!open %<CR><CR>", silent)
 -- nnoremap("J", "mzJ`z")

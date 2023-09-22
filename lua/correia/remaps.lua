@@ -13,6 +13,10 @@ local silent = { silent = true }
 -- easier to enter normal mode
 inoremap("jk", "<Esc>")
 
+-- buffers
+nnoremap("<leader>bn", "<Cmd>bnext<CR>", silent)
+nnoremap("<leader>bp", "<Cmd>bprevious<CR>", silent)
+
 -- Movement
 nnoremap("<C-L>", "<C-W><C-L>")
 nnoremap("<C-H>", "<C-W><C-H>")

@@ -30,7 +30,7 @@ require("lualine").setup({
                 'filename',
                 file_status = true,    -- Displays file status (readonly status, modified status)
                 newfile_status = true, -- Display new file status (new file means no write after created)
-                path = 4,              -- 0: Just the filename
+                path = 0,              -- 0: Just the filename
                 -- 1: Relative path
                 -- 2: Absolute path
                 -- 3: Absolute path, with tilde as the home directory
@@ -93,14 +93,20 @@ require("lualine").setup({
                 hide_filename_extension = false, -- Hide filename extension when set to true.
                 show_modified_status = true,     -- Shows indicator when the buffer is modified.
 
-                mode = 0,                        -- 0: Shows buffer name
+                -- use_mode_colors = false,
+                buffers_color = {
+                    active = { fg = "#fab387" },
+                    inactive = { fg = "#bac2de" },
+                },
+
+                mode = 0, -- 0: Shows buffer name
                 -- 1: Shows buffer index
                 -- 2: Shows buffer name + buffer index
                 -- 3: Shows buffer number
                 -- 4: Shows buffer name + buffer number
 
                 -- max_length = vim.o.columns * 2 / 3, -- Maximum width of buffers component,
-                max_length = 150, -- Maximum width of buffers component,
+                max_length = 80, -- Maximum width of buffers component,
             },
             'encoding',
             {

@@ -17,6 +17,7 @@ require("lazy").setup({
 
     -- Colorscheme
     { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
+    { "sainnhe/everforest" },
     -- {
     --     'projekt0n/github-nvim-theme',
     --     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
@@ -132,11 +133,11 @@ require("lazy").setup({
     { "lewis6991/gitsigns.nvim" },
 
     -- Debugging
-      -- { "mfussenegger/nvim-dap" },
-      -- { "rcarriga/nvim-dap-ui" },
-      -- { "theHamsta/nvim-dap-virtual-text" },
-      -- { "nvim-telescope/telescope-dap.nvim" },
-      -- { "leoluz/nvim-dap-go" },
+    -- { "mfussenegger/nvim-dap" },
+    -- { "rcarriga/nvim-dap-ui" },
+    -- { "theHamsta/nvim-dap-virtual-text" },
+    -- { "nvim-telescope/telescope-dap.nvim" },
+    -- { "leoluz/nvim-dap-go" },
 
     -- writing
     -- { "preservim/vim-pencil" },
@@ -149,21 +150,21 @@ require("lazy").setup({
     { "mbbill/undotree" },
     { "uga-rosa/ccc.nvim" },
     { "nvim-pack/nvim-spectre" },
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- add any options here
-        },
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        }
-    },
+    -- {
+    --     "folke/noice.nvim",
+    --     event = "VeryLazy",
+    --     opts = {
+    --         -- add any options here
+    --     },
+    --     dependencies = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         -- OPTIONAL:
+    --         --   `nvim-notify` is only needed, if you want to use the notification view.
+    --         --   If not available, we use `mini` as the fallback
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- },
     { "nycrat/todo.nvim" },
     { "nycrat/gui-fonts.nvim" },
     {
@@ -187,7 +188,7 @@ require("lazy").setup({
         "folke/trouble.nvim",
         event = "BufRead",
         opts = {
-            
+
         },
     },
 

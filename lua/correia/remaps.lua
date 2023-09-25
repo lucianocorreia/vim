@@ -16,6 +16,7 @@ inoremap("jk", "<Esc>")
 -- buffers
 nnoremap("<leader>bn", "<Cmd>bnext<CR>", silent)
 nnoremap("<leader>bp", "<Cmd>bprevious<CR>", silent)
+nnoremap("<leader>bd", "<Cmd>bd<CR>", silent)
 
 -- Movement
 nnoremap("<C-L>", "<C-W><C-L>")

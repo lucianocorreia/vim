@@ -2,9 +2,8 @@ require("lualine").setup({
     -- sections = {lualine_c = {"filename", {getWords}}, lualine_x = {{getGuiFont}, 'filetype'}},
     options = {
         icons_enabled = true,
-        theme = 'catppuccin-mocha',
-        -- theme = 'tokyonight-night',
-        -- theme = 'everforest',
+        -- theme = 'catppuccin-mocha',
+        theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
     },

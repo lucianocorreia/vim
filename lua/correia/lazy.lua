@@ -13,20 +13,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "kevinhwang91/nvim-bqf", ft = "qf" },
+    { "kevinhwang91/nvim-bqf",   ft = "qf" },
 
     -- Colorscheme
-    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
-    -- {
-    --     "rebelot/kanagawa.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    -- },
+    { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
+    -- { "sainnhe/gruvbox-material" },
     -- { "sainnhe/everforest" },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },
-        { 'rose-pine/neovim', name = 'rose-pine' },
 
     -- lsp
     {
@@ -76,6 +71,7 @@ require("lazy").setup({
             -- rust tools
             { "simrat39/rust-tools.nvim" },
             { "fatih/vim-go" },
+            { "rrethy/vim-illuminate" },
             -- {
             --     "ray-x/lsp_signature.nvim",
             --     event = "VeryLazy",

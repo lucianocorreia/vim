@@ -13,10 +13,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "kevinhwang91/nvim-bqf",   ft = "qf" },
+    { "kevinhwang91/nvim-bqf", ft = "qf" },
 
     -- Colorscheme
-    { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
     -- { "sainnhe/gruvbox-material" },
     -- { "sainnhe/everforest" },
 
@@ -169,7 +169,7 @@ require("lazy").setup({
     -- looks
     { "laytan/cloak.nvim" },
     { "nvim-lualine/lualine.nvim" },
-    { "lukas-reineke/indent-blankline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     -- { 'akinsho/bufferline.nvim',            version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
     {

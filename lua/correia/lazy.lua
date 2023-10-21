@@ -135,10 +135,10 @@ require("lazy").setup({
 
     -- writing
     -- { "preservim/vim-pencil" },
-    {
-        "iamcco/markdown-preview.nvim",
-        build = "cd app && npm install",
-    },
+    -- {
+    --     "iamcco/markdown-preview.nvim",
+    --     build = "cd app && npm install",
+    -- },
 
     -- misc
     { "mbbill/undotree" },

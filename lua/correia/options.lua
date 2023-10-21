@@ -9,7 +9,7 @@ local options = {
     showmatch = true,
 
     number = true,
-    relativenumber = false,
+    relativenumber = true,
     numberwidth = 5,
     incsearch = true,
     hlsearch = true,

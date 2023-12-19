@@ -18,7 +18,7 @@ require("lazy").setup({
     -- Colorscheme
     { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
     -- { "sainnhe/gruvbox-material" },
-    -- { "sainnhe/everforest" },
+    { "sainnhe/everforest" },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },
@@ -80,6 +80,9 @@ require("lazy").setup({
             -- },
         },
     },
+
+    -- java
+    { "mfussenegger/nvim-jdtls" },
 
     -- copilot
     { "github/copilot.vim" },

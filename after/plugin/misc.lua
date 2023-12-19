@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup({
     ensure_installed = { 'c', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'yaml', "php", "sql",
-        "vue", "html", "javascript" },
+        "vue", "html", "javascript", "templ" },
     -- context_commentstring = { enable = true },
     -- highlight = {
     --     enable = true,
@@ -23,7 +23,7 @@ require("nvim-treesitter.configs").setup({
 
     highlight = { enable = true },
     indent = { enable = true },
-    context_commentstring = { enable = true },
+    -- context_commentstring = { enable = true },
     incremental_selection = {
         enable = true,
         keymaps = {
@@ -142,3 +142,10 @@ require("ibl").setup {
     -- },
     scope = { enabled = false },
 }
+
+-- additional filetypes
+vim.filetype.add({
+    extension = {
+        templ = "templ",
+    },
+})

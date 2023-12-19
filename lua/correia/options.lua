@@ -34,7 +34,7 @@ local options = {
     undodir = os.getenv("HOME") .. "/.vim/undodir",
     undofile = true,
 
-    colorcolumn = "120",
+    colorcolumn = "180",
     updatetime = 20,
     scrolloff = 15,
     mouse = "a",

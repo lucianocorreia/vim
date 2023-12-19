@@ -20,32 +20,6 @@ lsp.on_attach(function(client, bufnr)
 
     nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)
 
-    if client.name ~= 'gopls' then
-    end
-
-    -- if client.server_capabilities.documentHighlightProvider then
-    --     vim.cmd [[
-    -- hi! LspReferenceRead guibg=#585b70
-    -- hi! LspReferenceText  guibg=#585b70
-    -- hi! LspReferenceWrite  guibg=#585b70 ]]
-    --     vim.api.nvim_create_augroup('lsp_document_highlight', {
-    --         clear = false
-    --     })
-    --     vim.api.nvim_clear_autocmds({
-    --         buffer = bufnr,
-    --         group = 'lsp_document_highlight',
-    --     })
-    --     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    --         group = 'lsp_document_highlight',
-    --         buffer = bufnr,
-    --         callback = vim.lsp.buf.document_highlight,
-    --     })
-    --     vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-    --         group = 'lsp_document_highlight',
-    --         buffer = bufnr,
-    --         callback = vim.lsp.buf.clear_references,
-    --     })
-    -- end
 end)
 
 nnoremap('<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
@@ -132,6 +106,20 @@ lsp.setup()
 --     function(config) require("mason-nvim-dap").default_setup(config) end,
 --   },
 -- })
+local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status then
+	return
+end
+lspconfig["omnisharp"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	enable_editorconfig_support = true,
+	enable_roslyn_analyzers = true,
+	organize_imports_on_format = true,
+	enable_import_completion = true,
+	analyze_open_documents_only = false,
+	filetypes = { "cs", "vb" },
+})
 
 local rust_tools = require('rust-tools')
 local ih = require("inlay-hints")
@@ -188,25 +176,6 @@ rust_tools.setup({
         highlight = "Comment",
     },
 })
-
--- require('lspconfig').gopls.setup({
---   on_attach = function(c, b)
---     ih.on_attach(c, b)
---   end,
---   settings = {
---     gopls = {
---       hints = {
---         assignVariableTypes = true,
---         compositeLiteralFields = true,
---         compositeLiteralTypes = true,
---         constantValues = true,
---         functionTypeParameters = true,
---         parameterNames = true,
---         rangeVariableTypes = true,
---       },
---     },
---   },
--- })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

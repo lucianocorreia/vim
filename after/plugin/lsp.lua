@@ -19,7 +19,6 @@ lsp.on_attach(function(client, bufnr)
     inoremap("<C-j>", function() vim.lsp.buf.signature_help() end, opts)
 
     nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)
-
 end)
 
 nnoremap('<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
@@ -108,18 +107,34 @@ lsp.setup()
 -- })
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
-	return
+    return
 end
-lspconfig["omnisharp"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	enable_editorconfig_support = true,
-	enable_roslyn_analyzers = true,
-	organize_imports_on_format = true,
-	enable_import_completion = true,
-	analyze_open_documents_only = false,
-	filetypes = { "cs", "vb" },
+
+-- lspconfig["omnisharp"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	enable_editorconfig_support = true,
+-- 	enable_roslyn_analyzers = true,
+-- 	organize_imports_on_format = true,
+-- 	enable_import_completion = true,
+-- 	analyze_open_documents_only = false,
+-- 	filetypes = { "cs", "vb" },
+-- })
+
+
+lspconfig["tailwindcss"].setup({
+    filetypes = {
+        'templ',
+        'html',
+        'css',
+    },
+    init_options = {
+        userLanguages = {
+            templ = "html"
+        }
+    }
 })
+
 
 local rust_tools = require('rust-tools')
 local ih = require("inlay-hints")

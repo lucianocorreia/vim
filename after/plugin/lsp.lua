@@ -98,29 +98,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup()
--- require("mason-nvim-dap").setup({
---   ensure_installed = { "python", "cpp" },
---   automatic_installation = true,
---   handlers = {
---     function(config) require("mason-nvim-dap").default_setup(config) end,
---   },
--- })
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
     return
 end
-
--- lspconfig["omnisharp"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	enable_editorconfig_support = true,
--- 	enable_roslyn_analyzers = true,
--- 	organize_imports_on_format = true,
--- 	enable_import_completion = true,
--- 	analyze_open_documents_only = false,
--- 	filetypes = { "cs", "vb" },
--- })
-
 
 lspconfig["tailwindcss"].setup({
     filetypes = {
@@ -134,7 +115,6 @@ lspconfig["tailwindcss"].setup({
         }
     }
 })
-
 
 local rust_tools = require('rust-tools')
 local ih = require("inlay-hints")

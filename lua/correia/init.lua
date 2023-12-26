@@ -20,6 +20,8 @@ vim.g.everforest_ui_contrast = "high"
 vim.g.show_eob = 1
 vim.geverforest_float_style = "dim"
 vim.g.everforest_better_performance = 1
+-- vim.g.everforest_cursor = "blue"
+
 
 vim.cmd([[colorscheme everforest]]) 
 

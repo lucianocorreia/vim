@@ -16,9 +16,10 @@ require("lazy").setup({
     { "kevinhwang91/nvim-bqf", ft = "qf" },
 
     -- Colorscheme
-    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
+    -- { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
     -- { "sainnhe/gruvbox-material" },
     { "sainnhe/everforest" },
+    { "LunarVim/darkplus.nvim" },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },
@@ -142,6 +143,25 @@ require("lazy").setup({
     --     "iamcco/markdown-preview.nvim",
     --     build = "cd app && npm install",
     -- },
+
+    -- SQL
+    {
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod',                     lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
+        init = function()
+            -- Your DBUI configuration
+            vim.g.db_ui_use_nerd_fonts = 1
+        end,
+    },
 
     -- misc
     { "mbbill/undotree" },

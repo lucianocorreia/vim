@@ -62,10 +62,10 @@ require("telescope").setup({
     },
     extensions = {
         fzf = {
-            fuzzy = true,             -- false will only do exact matching
+            fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
         },
         -- coc = {
         --   theme = 'ivy',
@@ -78,8 +78,14 @@ require("telescope").setup({
 nnoremap("<leader>sw", telescope_builtin.live_grep, silent)
 nnoremap("<leader>st", telescope_builtin.help_tags, silent)
 nnoremap("<leader>so", telescope_builtin.lsp_document_symbols, silent)
-nnoremap("<leader>sd", telescope_builtin.diagnostics, silent)
+-- nnoremap("<leader>sd", telescope_builtin.diagnostics, silent)
 
+nnoremap('<leader>sd', function()
+        require('telescope.builtin').diagnostics(require('telescope.themes').get_dropdown {
+            previewer = false
+        })
+    end,
+    { desc = '[S]earch [F]iles' })
 nnoremap('<leader>sf', function()
         require('telescope.builtin').find_files(require('telescope.themes').get_dropdown {
             previewer = false

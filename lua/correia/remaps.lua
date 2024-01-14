@@ -94,7 +94,8 @@ nnoremap("<leader>h", ":nohl<CR>", silent)
 -- misc
 -- vnoremap("<leader>p", "\"_dp")
 -- vnoremap("<leader>P", "\"_dP")
-nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+-- nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>")
 nnoremap("<leader>w", "<Cmd>w<CR>")
 -- nnoremap("<leader>q", "<Cmd>q<CR>")
 nnoremap("<leader><C-o>", "<Cmd>!open %<CR><CR>", silent)
@@ -106,6 +107,12 @@ nnoremap("<leader>cb", "<Cmd>Build<CR>", silent)
 nnoremap("<leader>cd", "<Cmd>DebugBuild<CR>", silent)
 nnoremap("<leader>cx", "<Cmd>Run<CR>", silent)
 nnoremap("<leader>ct", "<Cmd>Test<CR>", silent)
+
+-- Go run commands
+nnoremap("<leader>gtf", "<Cmd>GoTestFunc<CR>", silent)
+nnoremap("<leader>gtp", "<Cmd>GoTestFile<CR>", silent)
+nnoremap("<leader>gat", "<Cmd>GoAddTags<CR>", silent)
+nnoremap("<leader>ger", "<Cmd>GoIfErr<CR>", silent)
 
 -- lsp
 nnoremap("<leader>sh", "<Cmd>RustEnableInlayHints<CR>", silent)

@@ -13,13 +13,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "kevinhwang91/nvim-bqf", ft = "qf" },
+    { "kevinhwang91/nvim-bqf",      ft = "qf" },
 
     -- Colorscheme
     -- { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
     -- { "sainnhe/gruvbox-material" },
     { "sainnhe/everforest" },
     { "LunarVim/darkplus.nvim" },
+    { 'projekt0n/github-nvim-theme' },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },
@@ -69,10 +70,11 @@ require("lazy").setup({
             { "rafamadriz/friendly-snippets" },
             { "honza/vim-snippets" },
 
-            -- rust tools
+            -- other languages
             { "simrat39/rust-tools.nvim" },
             { "fatih/vim-go" },
             { "rrethy/vim-illuminate" },
+            { "jlcrochet/vim-razor" },
             -- {
             --     "ray-x/lsp_signature.nvim",
             --     event = "VeryLazy",
@@ -167,22 +169,22 @@ require("lazy").setup({
     { "mbbill/undotree" },
     { "uga-rosa/ccc.nvim" },
     { "nvim-pack/nvim-spectre" },
-    -- {
-    --     "folke/noice.nvim",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         -- add any options here
-    --     },
-    --     dependencies = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         "MunifTanjim/nui.nvim",
-    --         -- OPTIONAL:
-    --         --   `nvim-notify` is only needed, if you want to use the notification view.
-    --         --   If not available, we use `mini` as the fallback
-    --         "rcarriga/nvim-notify",
-    --     }
-    -- },
-    { "nycrat/todo.nvim" },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    -- { "nycrat/todo.nvim" },
     { "nycrat/gui-fonts.nvim" },
     {
         "folke/todo-comments.nvim",

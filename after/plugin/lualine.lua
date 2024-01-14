@@ -2,8 +2,8 @@ require("lualine").setup({
     -- sections = {lualine_c = {"filename", {getWords}}, lualine_x = {{getGuiFont}, 'filetype'}},
     options = {
         icons_enabled = true,
-        theme = 'darkplus',
-        -- theme = 'everforest',
+        -- theme = 'github_dark_dimmed',
+        theme = 'everforest',
         component_separators = '|',
         section_separators = '',
     },
@@ -44,21 +44,21 @@ require("lualine").setup({
                 }
             },
             'searchcount', 'selectioncount',
-            -- {
-            --     function() return require("nvim-navic").get_location() end,
-            --     cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-            -- },
-            -- {
-            --     function() return require("noice").api.status.mode.get() end,
-            --     cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            -- },
+            {
+                function() return require("nvim-navic").get_location() end,
+                cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+            },
+            {
+                function() return require("noice").api.status.mode.get() end,
+                cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            },
         },
         lualine_x = {
-            -- {
-            --     function() return require("noice").api.status.command.get() end,
-            --     cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            --     color = { fg = '#cba6f7' },
-            -- },
+            {
+                function() return require("noice").api.status.command.get() end,
+                cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+                color = { fg = '#cba6f7' },
+            },
             -- {
             --     function()
             --         local lsps = vim.lsp.get_active_clients({ bufnr = vim.fn.bufnr() })

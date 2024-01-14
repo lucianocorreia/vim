@@ -140,7 +140,7 @@ require("ibl").setup {
     -- whitespace = {
     --     remove_blankline_trail = false,
     -- },
-    scope = { enabled = true },
+    scope = { enabled = false },
 }
 
 -- additional filetypes

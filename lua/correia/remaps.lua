@@ -137,5 +137,3 @@ nnoremap("<leader>xq", function() require("trouble").open("quickfix") end)
 nnoremap("<leader>xl", function() require("trouble").open("loclist") end)
 nnoremap("gR", function() require("trouble").open("lsp_references") end)
 
--- SQL
-nnoremap("<leader>cq", "<Cmd>DBUIToggle<CR>", silent)

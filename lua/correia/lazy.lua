@@ -16,8 +16,6 @@ require("lazy").setup({
     { "kevinhwang91/nvim-bqf",      ft = "qf" },
 
     -- Colorscheme
-    -- { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
-    -- { "sainnhe/gruvbox-material" },
     { "sainnhe/everforest" },
     { "LunarVim/darkplus.nvim" },
     { 'projekt0n/github-nvim-theme' },
@@ -75,12 +73,6 @@ require("lazy").setup({
             { "fatih/vim-go" },
             { "rrethy/vim-illuminate" },
             { "jlcrochet/vim-razor" },
-            -- {
-            --     "ray-x/lsp_signature.nvim",
-            --     event = "VeryLazy",
-            --     opts = {},
-            --     config = function(_, opts) require 'lsp_signature'.setup(opts) end
-            -- },
         },
     },
 
@@ -99,8 +91,6 @@ require("lazy").setup({
         build = ":TSUpdate",
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" }
     },
-    -- { "nvim-treesitter/nvim-treesitter-context" },
-    -- { "kylechui/nvim-surround" },
 
     {
         "utilyre/barbecue.nvim",
@@ -139,32 +129,6 @@ require("lazy").setup({
     -- { "nvim-telescope/telescope-dap.nvim" },
     -- { "leoluz/nvim-dap-go" },
 
-    -- writing
-    -- { "preservim/vim-pencil" },
-    -- {
-    --     "iamcco/markdown-preview.nvim",
-    --     build = "cd app && npm install",
-    -- },
-
-    -- SQL
-    {
-        'kristijanhusak/vim-dadbod-ui',
-        dependencies = {
-            { 'tpope/vim-dadbod',                     lazy = true },
-            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
-        },
-        cmd = {
-            'DBUI',
-            'DBUIToggle',
-            'DBUIAddConnection',
-            'DBUIFindBuffer',
-        },
-        init = function()
-            -- Your DBUI configuration
-            vim.g.db_ui_use_nerd_fonts = 1
-        end,
-    },
-
     -- misc
     { "mbbill/undotree" },
     { "uga-rosa/ccc.nvim" },
@@ -184,7 +148,6 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         }
     },
-    -- { "nycrat/todo.nvim" },
     { "nycrat/gui-fonts.nvim" },
     {
         "folke/todo-comments.nvim",
@@ -210,6 +173,8 @@ require("lazy").setup({
 
         },
     },
+
+    { "folke/neodev.nvim", opts = {} },
 
     -- terminal
     {

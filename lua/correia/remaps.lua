@@ -111,6 +111,10 @@ nnoremap("<leader>ct", "<Cmd>Test<CR>", silent)
 -- Go run commands
 nnoremap("<leader>gtf", "<Cmd>GoTestFunc<CR>", silent)
 nnoremap("<leader>gtp", "<Cmd>GoTestFile<CR>", silent)
+nnoremap("<leader>gto", "<Cmd>GoCoverage<CR>", silent)
+nnoremap("<leader>gtc", "<Cmd>GoCoverageToggle<CR>", silent)
+nnoremap("<leader>gtb", "<Cmd>GoCoverageBrowser<CR>", silent)
+
 nnoremap("<leader>gat", "<Cmd>GoAddTags<CR>", silent)
 nnoremap("<leader>ger", "<Cmd>GoIfErr<CR>", silent)
 

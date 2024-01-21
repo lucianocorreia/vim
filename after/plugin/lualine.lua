@@ -2,8 +2,8 @@ require("lualine").setup({
     -- sections = {lualine_c = {"filename", {getWords}}, lualine_x = {{getGuiFont}, 'filetype'}},
     options = {
         icons_enabled = true,
-        -- theme = 'github_dark_dimmed',
-        theme = 'everforest',
+        theme = 'kanagawa',
+        -- theme = 'everforest',
         component_separators = '|',
         section_separators = '',
     },
@@ -44,14 +44,14 @@ require("lualine").setup({
                 }
             },
             'searchcount', 'selectioncount',
-            {
-                function() return require("nvim-navic").get_location() end,
-                cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-            },
-            {
-                function() return require("noice").api.status.mode.get() end,
-                cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            },
+            -- {
+            --     function() return require("nvim-navic").get_location() end,
+            --     cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+            -- },
+            -- {
+            --     function() return require("noice").api.status.mode.get() end,
+            --     cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            -- },
         },
         lualine_x = {
             {

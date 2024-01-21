@@ -13,12 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "kevinhwang91/nvim-bqf",      ft = "qf" },
+    { "kevinhwang91/nvim-bqf", ft = "qf" },
 
     -- Colorscheme
     { "sainnhe/everforest" },
-    { "LunarVim/darkplus.nvim" },
-    { 'projekt0n/github-nvim-theme' },
+    { "rebelot/kanagawa.nvim" },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },

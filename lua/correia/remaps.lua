@@ -1,3 +1,4 @@
+-- TODO: Configurar todos os remapls com uma descrição e colocar no telescope uma maneira de pesquisar por eles
 local Remap = require("correia.keymap")
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap

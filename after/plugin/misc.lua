@@ -136,12 +136,14 @@ require('gitsigns').setup {
     },
 }
 
--- require("ibl").setup {
---     -- whitespace = {
---     --     remove_blankline_trail = false,
---     -- },
---     scope = { enabled = true },
--- }
+require("ibl").setup {
+    -- whitespace = {
+    --     remove_blankline_trail = false,
+    -- },
+    -- indent = { highlight = { "LineNr" }, char = "│" },
+    indent = { char = "│", highlight = { "LineNr" } },
+    scope = { enabled = false },
+}
 
 
 -- additional filetypes

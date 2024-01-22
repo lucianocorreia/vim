@@ -156,7 +156,7 @@ require("lazy").setup({
     -- looks
     { "laytan/cloak.nvim" },
     { "nvim-lualine/lualine.nvim" },
-    -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     -- { 'akinsho/bufferline.nvim',            version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
     {

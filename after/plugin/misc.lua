@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup({
     ensure_installed = { 'c', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'yaml', "php", "sql",
-        "vue", "html", "javascript", "templ" },
+        "vue", "html", "javascript", "templ", "http", "json" },
     -- context_commentstring = { enable = true },
     -- highlight = {
     --     enable = true,

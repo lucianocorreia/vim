@@ -13,17 +13,16 @@ require("lualine").setup({
         lualine_c = {
             {
                 'diff',
-                colored = true, -- Displays a colored diff status if set to true
+                colored = true,         -- Displays a colored diff status if set to true
                 diff_color = {
-                    -- added = 'DiffAdd',    -- changes diff's added color
-                    -- modified = 'DiffChange',  -- changes diff's modified color
-                    -- removed = 'DiffDelete', -- changes diff's removed color
+                    -- added    = 'LuaLineDiffAdd', -- Changes the diff's added color
+                    -- modified = 'LuaLineDiffChange', -- Changes the diff's modified color
+                    -- removed  = 'LuaLineDiffDelete', -- Changes the diff's removed color you
                     added = { fg = "#a6e3a1" },
                     modified = { fg = "#f9e2af" },
                     removed = { fg = "#f38ba8" },
                 },
                 symbols = { added = '+', modified = '~', removed = '-' }, -- Changes the symbols used by the diff.
-                source = nil,                                             -- A function that works as a data source for diff.
             },
             {
                 'filename',

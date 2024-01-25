@@ -183,11 +183,11 @@ require("lazy").setup({
             -- startify.section.mru.val = { { type = "padding", val = 0 } }
 
             -- Set menu
-            startify.section.top_buttons.val = {
-                startify.button("SPC ee", " > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
-                startify.button("SPC sf", " > Find File", "<cmd>Telescope find_files<CR>"),
-                startify.button("SPC sw", " > Find Word", "<cmd>Telescope live_grep<CR>"),
-            }
+            -- startify.section.top_buttons.val = {
+            --     startify.button("SPC ee", " > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
+            --     startify.button("SPC sf", " > Find File", "<cmd>Telescope find_files<CR>"),
+            --     startify.button("SPC sw", " > Find Word", "<cmd>Telescope live_grep<CR>"),
+            -- }
 
             -- Send config to alpha
             alpha.setup(startify.config)

@@ -8,7 +8,7 @@ local silent = { silent = true }
 nnoremap("<F2>", dap.terminate, silent)
 nnoremap("<F5>", dap.continue, silent)
 nnoremap("<F10>", dap.step_over, silent)
-nnoremap("<F10>", dap.step_into, silent)
+nnoremap("<F11>", dap.step_into, silent)
 nnoremap("<F12>", dap.step_out, silent)
 
 nnoremap("<leader>du", dapui.toggle, silent)

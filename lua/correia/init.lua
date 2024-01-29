@@ -24,7 +24,7 @@ require("correia.remaps")
 
 -- Default options:
 require('kanagawa').setup({
-    compile = false,   -- enable compiling the colorscheme
+    compile = true,   -- enable compiling the colorscheme
     undercurl = false, -- enable undercurls
     commentStyle = { italic = true, bold = false },
     functionStyle = { bold = false },
@@ -32,7 +32,7 @@ require('kanagawa').setup({
     statementStyle = { bold = false },
     typeStyle = { bold = false },
     transparent = true,    -- do not set background color
-    dimInactive = false,     -- dim inactive window `:h hl-NormalNC`
+    dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
     terminalColors = true, -- define vim.g.terminal_color_{0,17}
     colors = {
         theme = {
@@ -57,6 +57,27 @@ require('kanagawa').setup({
             -- TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
             -- TelescopePreviewNormal = { bg = theme.ui.bg_dim },
             -- TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+            --
+            -- update kanagawa to handle new treesitter highlight captures
+            ["@string.regexp"] = { link = "@string.regex" },
+            ["@variable.parameter"] = { link = "@parameter" },
+            ["@exception"] = { link = "@exception" },
+            ["@string.special.symbol"] = { link = "@symbol" },
+            ["@markup.strong"] = { link = "@text.strong" },
+            ["@markup.italic"] = { link = "@text.emphasis" },
+            ["@markup.heading"] = { link = "@text.title" },
+            ["@markup.raw"] = { link = "@text.literal" },
+            ["@markup.quote"] = { link = "@text.quote" },
+            ["@markup.math"] = { link = "@text.math" },
+            ["@markup.environment"] = { link = "@text.environment" },
+            ["@markup.environment.name"] = { link = "@text.environment.name" },
+            ["@markup.link.url"] = { link = "Special" },
+            ["@markup.link.label"] = { link = "Identifier" },
+            ["@comment.note"] = { link = "@text.note" },
+            ["@comment.warning"] = { link = "@text.warning" },
+            ["@comment.danger"] = { link = "@text.danger" },
+            ["@diff.plus"] = { link = "@text.diff.add" },
+            ["@diff.minus"] = { link = "@text.diff.delete" },
         }
     end,
     -- colors = {                   -- add/modify theme and palette colors

@@ -147,3 +147,9 @@ nnoremap("gR", function() require("trouble").open("lsp_references") end)
 -- rest http client
 nnoremap("<leader>rr", "<Plug>RestNvim", silent)
 nnoremap("<leader>rv", "<Plug>RestNvimPreview", silent)
+
+-- fold
+vnoremap("<C-f>", ":fold<CR>", silent)
+nnoremap("<C-f>", "<Cmd>foldopen<CR>", silent)
+
+

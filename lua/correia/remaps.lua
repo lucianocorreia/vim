@@ -89,8 +89,8 @@ vnoremap(">", ">gv", silent)
 nnoremap("<leader>h", ":nohl<CR>", silent)
 
 -- wrap
--- nnoremap("<leader>wq", "<Cmd>set wrap<CR>", silent)
--- nnoremap("<leader>wq", "<cmd>set nowrap<cr>", silent)
+nnoremap("<leader>ow", "<Cmd>set wrap<CR>", silent)
+nnoremap("<leader>oq", "<cmd>set nowrap<cr>", silent)
 
 -- misc
 -- vnoremap("<leader>p", "\"_dp")

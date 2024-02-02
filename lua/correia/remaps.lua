@@ -40,7 +40,7 @@ nnoremap("L", "2<C-W><")
 vnoremap("<D-j>", "J")
 
 -- Copy Paste
--- vnoremap("<leader>y", "\"+y", silent)
+nnoremap("<leader>y", "yiw", silent)
 
 -- Neovide Copy Paste
 -- vnoremap("<D-c>", "\"+y", silent)

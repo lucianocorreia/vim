@@ -86,7 +86,7 @@ vnoremap("<", "<gv", silent)
 vnoremap(">", ">gv", silent)
 
 -- hlsearch
-nnoremap("<leader>h", ":nohl<CR>", silent)
+nnoremap("<leader>hh", ":nohl<CR>", silent)
 
 -- wrap
 nnoremap("<leader>ow", "<Cmd>set wrap<CR>", silent)

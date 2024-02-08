@@ -28,7 +28,7 @@ require('kanagawa').setup({
     keywordStyle = { italic = true, bold = false },
     statementStyle = { bold = false },
     typeStyle = { bold = false },
-    transparent = true,    -- do not set background color
+    transparent = false,    -- do not set background color
     dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
     terminalColors = true, -- define vim.g.terminal_color_{0,17}
     colors = {

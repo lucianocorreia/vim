@@ -6,9 +6,6 @@ require("correia.remaps")
 -- catppuccino
 -- vim.cmd([[colorscheme catppuccin-mocha]]) -- some issues with gitgutter color if in after
 
--- github_dark
--- vim.cmd('colorscheme github_dark_dimmed')
-
 -- everforest
 -- vim.g.everforest_background = "hard"
 -- vim.g.everforest_enable_italic = 1

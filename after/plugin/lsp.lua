@@ -15,7 +15,7 @@ lsp.on_attach(function(client, bufnr)
     nnoremap("<leader>gd", function() vim.lsp.buf.definition() end, opts)
     nnoremap("<leader>gF", function() vim.lsp.buf.declaration() end, opts)
     nnoremap("K", function() vim.lsp.buf.hover() end, opts)
-    -- inoremap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    inoremap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     inoremap("<C-j>", function() vim.lsp.buf.signature_help() end, opts)
 
     nnoremap("<leader>de", function() vim.diagnostic.open_float() end, opts)

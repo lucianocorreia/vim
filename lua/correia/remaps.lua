@@ -120,8 +120,8 @@ nnoremap("<leader>gat", "<Cmd>GoAddTags<CR>", silent)
 nnoremap("<leader>ger", "<Cmd>GoIfErr<CR>", silent)
 
 -- lsp
-nnoremap("<leader>sh", "<Cmd>RustEnableInlayHints<CR>", silent)
-nnoremap("<leader>hs", "<Cmd>RustDisableInlayHints<CR>", silent)
+-- nnoremap("<leader>sh", "<Cmd>RustEnableInlayHints<CR>", silent)
+-- nnoremap("<leader>hs", "<Cmd>RustDisableInlayHints<CR>", silent)
 
 -- gui only
 nnoremap("<D-->", "<Cmd>FontSizeDecrement<CR>", silent)

@@ -13,11 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "kevinhwang91/nvim-bqf", ft = "qf" },
+    { "kevinhwang91/nvim-bqf",  ft = "qf" },
 
     -- Colorscheme
     { "sainnhe/everforest" },
     { "rebelot/kanagawa.nvim" },
+    -- { 'chriskempson/base16-vim' },
 
     -- Detect tabstop and shiftwidth automatically
     -- { 'tpope/vim-sleuth' },
@@ -60,7 +61,6 @@ require("lazy").setup({
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
-            { "simrat39/inlay-hints.nvim" },
 
             -- Snippets
             { "L3MON4D3/LuaSnip",            version = "2.*" },
@@ -68,15 +68,18 @@ require("lazy").setup({
             { "honza/vim-snippets" },
 
             -- other languages
-            { "simrat39/rust-tools.nvim" },
             { "fatih/vim-go" },
             { "rrethy/vim-illuminate" },
             { "jlcrochet/vim-razor" },
+
+            -- rust
+            {
+                'mrcjkb/rustaceanvim',
+                version = '^4',
+                ft = { 'rust' },
+            }
         },
     },
-
-    -- java
-    { "mfussenegger/nvim-jdtls" },
 
     -- copilot
     { "github/copilot.vim" },

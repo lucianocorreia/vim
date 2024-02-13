@@ -18,6 +18,7 @@ require("lazy").setup({
     -- Colorscheme
     { "sainnhe/everforest" },
     { "rebelot/kanagawa.nvim" },
+    { 'Mofiqul/vscode.nvim'},
     -- { 'chriskempson/base16-vim' },
 
     -- Detect tabstop and shiftwidth automatically

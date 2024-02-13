@@ -4,7 +4,6 @@
   "LuaSnip": { "branch": "master", "commit": "8ae1dedd988eb56441b7858bd1e8554dfadaa46d" },
   "alpha-nvim": { "branch": "main", "commit": "1356b9ef31b985d541d94314f2cf73c61124bf1d" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
-  "base16-vim": { "branch": "master", "commit": "3be3cd82cd31acfcab9a41bad853d9c68d30478d" },
   "ccc.nvim": { "branch": "main", "commit": "ec6e23fd2c0bf4ffcf71c1271acdcee6e2c6f49c" },
   "cloak.nvim": { "branch": "main", "commit": "9abe4e986e924fc54a972c1b0ff52b65a0622624" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
@@ -61,5 +60,6 @@
   "vim-go": { "branch": "master", "commit": "0e975560df38be387cca1d7d33df7a4744091303" },
   "vim-illuminate": { "branch": "master", "commit": "305bf07b919ac526deb5193280379e2f8b599926" },
   "vim-razor": { "branch": "master", "commit": "3fcc140db220aff169d77c5d8314a088dd161245" },
-  "vim-snippets": { "branch": "master", "commit": "9bd88e07865bd4fa982d46356c227b07de66412a" }
+  "vim-snippets": { "branch": "master", "commit": "9bd88e07865bd4fa982d46356c227b07de66412a" },
+  "vscode.nvim": { "branch": "main", "commit": "380c1068612b1bfbe35d70a4f2e58be5030a0707" }
 }

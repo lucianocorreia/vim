@@ -145,7 +145,6 @@ require("ibl").setup {
     scope = { enabled = false },
 }
 
-
 -- additional filetypes
 vim.filetype.add({
     extension = {

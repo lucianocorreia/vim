@@ -140,7 +140,6 @@ nnoremap("<leader>xw", function() require("trouble").open("workspace_diagnostics
 nnoremap("<leader>xd", function() require("trouble").open("document_diagnostics") end)
 nnoremap("<leader>xq", function() require("trouble").open("quickfix") end)
 nnoremap("<leader>xl", function() require("trouble").open("loclist") end)
--- nnoremap("<leader>xt", "<Cmd>TodoTrouble<CR>")
 nnoremap("<leader>xt", "<Cmd>exe ':TodoTrouble cwd=' .. fnameescape(expand('%:p'))<CR>")
 nnoremap("gR", function() require("trouble").open("lsp_references") end)
 

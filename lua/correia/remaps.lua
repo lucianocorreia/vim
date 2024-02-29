@@ -93,8 +93,8 @@ nnoremap("<leader>ow", "<Cmd>set wrap<CR>", silent)
 nnoremap("<leader>oq", "<cmd>set nowrap<cr>", silent)
 
 -- misc
--- vnoremap("<leader>p", "\"_dp")
--- vnoremap("<leader>P", "\"_dP")
+-- vnoremap("<leader>p", "viwp")
+-- vnoremap("<leader>P", "viwP")
 -- nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>")
 nnoremap("<leader>w", "<Cmd>w<CR>")

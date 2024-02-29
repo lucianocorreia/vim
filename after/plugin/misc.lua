@@ -1,23 +1,6 @@
 require("nvim-treesitter.configs").setup({
     ensure_installed = { 'c', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'yaml', "php", "sql",
         "vue", "html", "javascript", "templ", "http", "json" },
-    -- context_commentstring = { enable = true },
-    -- highlight = {
-    --     enable = true,
-    --     additional_vim_regex_highlighting = false,
-    --     disable = function(lang, buf)
-    --         local max_filesize = 100 * 1024 -- 100 KB
-    --         local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    --         if ok and stats and stats.size > max_filesize then
-    --             return true
-    --         end
-    --     end,
-    -- },
-    -- indent = {
-    --     enable = true,
-    --     -- disable = { "cpp", "typescript", "typescriptreact", "rust" },
-    -- },
-
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
@@ -67,27 +50,24 @@ require("nvim-treesitter.configs").setup({
                 ['[]'] = '@class.outer',
             },
         },
-        -- swap = {
-        --     enable = true,
-        --     swap_next = {
-        --         ['<leader>a'] = '@parameter.inner',
-        --     },
-        --     swap_previous = {
-        --         ['<leader>A'] = '@parameter.inner',
-        --     },
-        -- },
     },
 })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
+-- local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+-- vim.api.nvim_create_autocmd('TextYankPost', {
+--     callback = function()
+--         vim.highlight.on_yank()
+--     end,
+--     group = highlight_group,
+--     pattern = '*',
+-- })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("correia-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 require("ccc").setup()

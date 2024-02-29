@@ -21,14 +21,14 @@ require("lazy").setup({
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
+		config = function()
+			-- Load the colorscheme here
+			vim.cmd.colorscheme("tokyonight-night")
+
+			-- You can configure highlights by doing something like
+			vim.cmd.hi("Comment gui=none")
+		end,
     },
-    -- { 'chriskempson/base16-vim' },
-
-    -- Detect tabstop and shiftwidth automatically
-    -- { 'tpope/vim-sleuth' },
-
-    -- lsp
     {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v2.x",

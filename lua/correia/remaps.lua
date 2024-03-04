@@ -12,7 +12,11 @@ local silent = { silent = true }
 -- nnoremap("<C-b>", "<Cmd>silent !font-switcher -d; kill -SIGUSR1 $(ps -A | grep 'kitty$' | awk '{print $1}')<CR>")
 
 -- easier to enter normal mode
-inoremap("jk", "<Esc>")
+inoremap("kj", "<Esc>")
+
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "<leader>ge", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 
 -- buffers
 nnoremap("<leader>bn", "<Cmd>bnext<CR>", silent)
@@ -50,15 +54,15 @@ nnoremap("<leader>y", "yiw", silent)
 -- vnoremap("<D-v>", "\"+p", silent)
 
 -- built in terminal
-nnoremap('<leader>tt', '<Cmd>lua require("FTerm").toggle()<CR>')
-tnoremap('<leader>tt', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+nnoremap("<leader>tt", '<Cmd>lua require("FTerm").toggle()<CR>')
+tnoremap("<leader>tt", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 -- nnoremap("<leader>t", "<Cmd>sp<CR> <Cmd>term<CR> <Cmd>resize 15<CR> i", silent)
 -- nnoremap("<Esc>", "<C-\\><C-n>", silent)
 -- tnoremap("<C-c><C-c>", "<C-\\><C-n>:bw!<CR>", silent)
--- 
+--
 tnoremap("<D-v>", function()
-    local keys = vim.api.nvim_replace_termcodes("<C-\\><C-n>\"+pi", true, false, true)
-    vim.api.nvim_feedkeys(keys, "n", false)
+	local keys = vim.api.nvim_replace_termcodes('<C-\\><C-n>"+pi', true, false, true)
+	vim.api.nvim_feedkeys(keys, "n", false)
 end, silent)
 
 -- writing
@@ -135,13 +139,25 @@ inoremap("<D-m>", "<Cmd>FontIndexIncrement<CR>")
 inoremap("<D-n>", "<Cmd>FontIndexDecrement<CR>")
 
 -- Troble
-nnoremap("<leader>xx", function() require("trouble").open() end)
-nnoremap("<leader>xw", function() require("trouble").open("workspace_diagnostics") end)
-nnoremap("<leader>xd", function() require("trouble").open("document_diagnostics") end)
-nnoremap("<leader>xq", function() require("trouble").open("quickfix") end)
-nnoremap("<leader>xl", function() require("trouble").open("loclist") end)
+nnoremap("<leader>xx", function()
+	require("trouble").open()
+end)
+nnoremap("<leader>xw", function()
+	require("trouble").open("workspace_diagnostics")
+end)
+nnoremap("<leader>xd", function()
+	require("trouble").open("document_diagnostics")
+end)
+nnoremap("<leader>xq", function()
+	require("trouble").open("quickfix")
+end)
+nnoremap("<leader>xl", function()
+	require("trouble").open("loclist")
+end)
 nnoremap("<leader>xt", "<Cmd>exe ':TodoTrouble cwd=' .. fnameescape(expand('%:p'))<CR>")
-nnoremap("gR", function() require("trouble").open("lsp_references") end)
+nnoremap("gR", function()
+	require("trouble").open("lsp_references")
+end)
 
 -- rest http client
 nnoremap("<leader>rr", "<Plug>RestNvim", silent)
@@ -150,5 +166,3 @@ nnoremap("<leader>rv", "<Plug>RestNvimPreview", silent)
 -- fold
 vnoremap("<C-f>", ":fold<CR>", silent)
 nnoremap("<C-f>", "<Cmd>foldopen<CR>", silent)
-
-

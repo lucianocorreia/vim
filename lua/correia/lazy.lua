@@ -17,7 +17,15 @@ require("lazy").setup({
 
 	-- Colorscheme
 	{ "sainnhe/everforest" },
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme catppuccin-mocha]]) -- some issues with gitgutter color if in after
+			vim.cmd.hi("Comment gui=none")
+		end,
+	},
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -26,7 +34,7 @@ require("lazy").setup({
 			-- -- Load the colorscheme here
 			-- vim.cmd.colorscheme("tokyonight-night")
 
-			-- -- You can configure highlights by doing something like
+			-- You can configure highlights by doing something like
 			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},

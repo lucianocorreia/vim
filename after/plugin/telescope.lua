@@ -82,10 +82,12 @@ nnoremap("<leader>so", telescope_builtin.lsp_document_symbols, silent)
 nnoremap("<leader>sk", telescope_builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 
 nnoremap("<leader>sd", function()
-	require("telescope.builtin").diagnostics(require("telescope.themes").get_dropdown({
+	require("telescope.builtin").diagnostics(require("telescope.themes").get_ivy({
 		previewer = false,
+		winblend = 10,
 	}))
 end, { desc = "[S]earch [F]iles" })
+
 nnoremap("<leader>sf", function()
 	require("telescope.builtin").find_files(require("telescope.themes").get_dropdown({
 		previewer = false,

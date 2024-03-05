@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			return
 		end
 
-		if client.name ~= "rust_analyzer" then
+		if client.name ~= "rust-analyzer" then
 			return
 		end
 

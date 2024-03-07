@@ -29,9 +29,9 @@ lsp.on_attach(function(client, bufnr)
 		vim.lsp.buf.hover()
 	end, { desc = "[K]doc", buffer = bufnr, silent = true })
 
-	vim.keymap.set("n", "<C-h>", function()
-		vim.lsp.buf.signature_help()
-	end, { desc = "Show signature help", buffer = bufnr, silent = true })
+	-- vim.keymap.set("n", "<C-j>", function()
+	-- 	vim.lsp.buf.signature_help()
+	-- end, { desc = "Show signature help", buffer = bufnr, silent = true })
 
 	vim.keymap.set("i", "<C-j>", function()
 		vim.lsp.buf.signature_help()

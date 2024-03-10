@@ -55,9 +55,16 @@ require("telescope").setup({
 		live_grep = {
 			-- @usage don't include the filename in the search results
 			only_sort_text = true,
+			prompt_position = "top",
 		},
 		diagnostics = {
 			bufrn = 0,
+		},
+		lsp_document_symbols = {
+			prompt_position = "top",
+		},
+		help_tags = {
+			prompt_position = "top",
 		},
 	},
 	extensions = {
@@ -74,10 +81,31 @@ require("telescope").setup({
 	},
 })
 
--- nnoremap("<leader><leader>", telescope_builtin.buffers, silent)
-nnoremap("<leader>sw", telescope_builtin.live_grep, silent)
-nnoremap("<leader>st", telescope_builtin.help_tags, silent)
-nnoremap("<leader>so", telescope_builtin.lsp_document_symbols, silent)
+-- nnoremap("<leader>sw", telescope_builtin.live_grep, silent)
+nnoremap("<leader>sw", function()
+	require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({
+		previewer = true,
+		winblend = 10,
+		prompt_position = "top",
+	}))
+end, silent)
+
+nnoremap("<leader>st", function()
+	require("telescope.builtin").help_tags(require("telescope.themes").get_ivy({
+		previewer = true,
+		winblend = 10,
+		prompt_position = "top",
+	}))
+end, silent)
+
+nnoremap("<leader>so", function()
+	require("telescope.builtin").lsp_document_symbols(require("telescope.themes").get_ivy({
+		previewer = true,
+		winblend = 10,
+		prompt_position = "top",
+	}))
+end, silent)
+
 -- nnoremap("<leader>sd", telescope_builtin.diagnostics, silent)
 nnoremap("<leader>sk", telescope_builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 
@@ -91,12 +119,15 @@ end, { desc = "[S]earch [F]iles" })
 nnoremap("<leader>sf", function()
 	require("telescope.builtin").find_files(require("telescope.themes").get_dropdown({
 		previewer = false,
+		winblend = 10,
+		prompt_position = "top",
 	}))
 end, { desc = "[S]earch [F]iles" })
 
 nnoremap("<leader><leader>", function()
 	require("telescope.builtin").buffers(require("telescope.themes").get_dropdown({
 		previewer = false,
+		prompt_position = "top",
 	}))
 end, { desc = "[S]earch [B]uffers" })
 
@@ -112,6 +143,7 @@ nnoremap("<leader>s/", function()
 	require("telescope.builtin").live_grep({
 		grep_open_files = true,
 		prompt_title = "Live Grep in Open Files",
+		prompt_position = "top",
 	})
 end, { desc = "[S]earch [/] in Open Files" })
 

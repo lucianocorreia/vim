@@ -60,12 +60,6 @@ require("telescope").setup({
 		diagnostics = {
 			bufrn = 0,
 		},
-		lsp_document_symbols = {
-			prompt_position = "top",
-		},
-		help_tags = {
-			prompt_position = "top",
-		},
 	},
 	extensions = {
 		fzf = {

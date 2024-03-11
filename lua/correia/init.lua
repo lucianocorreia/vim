@@ -1,6 +1,6 @@
 require("correia.options")
 require("correia.commands")
-require("correia.lazy")
+require("correia.plugins")
 require("correia.remaps")
 
 -- catppuccino

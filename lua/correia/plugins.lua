@@ -26,31 +26,93 @@ require("lazy").setup({
 		end,
 	},
 	-- {
-	-- 	"wincent/base16-nvim",
-	-- 	lazy = false, -- load at start
-	-- 	priority = 1000, -- load first
+	-- 	"sainnhe/everforest",
+	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		vim.cmd([[colorscheme base16-gruvbox-dark-hard]])
-	-- 		vim.o.background = "dark"
-	-- 		-- hi Normal ctermbg=NONE
-	-- 		-- Make comments more prominent -- they are important.
-	-- 		local bools = vim.api.nvim_get_hl(0, { name = "Boolean" })
-	-- 		vim.api.nvim_set_hl(0, "Comment", bools)
-	-- 		-- Make it clearly visible which argument we're at.
-	-- 		local marked = vim.api.nvim_get_hl(0, { name = "PMenu" })
-	-- 		vim.api.nvim_set_hl(
-	-- 			0,
-	-- 			"LspSignatureActiveParameter",
-	-- 			{ fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true }
-	-- 		)
-	-- 		-- XXX
-	-- 		-- Would be nice to customize the highlighting of warnings and the like to make
-	-- 		-- them less glaring. But alas
-	-- 		-- https://github.com/nvim-lua/lsp_extensions.nvim/issues/21
-	-- 		-- call Base16hi("CocHintSign", g:base16_gui03, "", g:base16_cterm03, "", "", "")
+	-- 		-- vim.g.everforest_background = "hard"
+	-- 		-- vim.g.everforest_enable_italic = 1
+	-- 		-- vim.g.everforest_diagnostic_text_highlight = 1
+	-- 		-- vim.g.everforest_diagnostic_virtual_text = "colored"
+	-- 		-- vim.g.everforest_diagnostic_line_highlight = 1
+	-- 		-- vim.g.everforest_current_word = "bold"
+	-- 		-- vim.g.everforest_ui_contrast = "high"
+	-- 		-- vim.g.show_eob = 1
+	-- 		-- vim.geverforest_float_style = "dim"
+	-- 		-- vim.g.everforest_better_performance = 1
+	-- 		-- vim.cmd([[colorscheme everforest]])
 	-- 	end,
 	-- },
-	{
+	-- {
+	-- 	"sainnhe/gruvbox-material",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- vim.g.gruvbox_material_background = "soft"
+	-- 		-- vim.g.gruvbox_material_foreground = "mix"
+	-- 		-- vim.g.gruvbox_material_cursor = "blue" -- 'auto'`, `'red'`, `'orange'`, `'yellow'`, `'green'`, `'aqua'`, `'blue'`, `'purple'`
+	-- 		-- vim.g.gruvbox_material_visual = "blue background" -- `'grey background'`, `'green background'`, `'blue background'`, `'red background'`, `'orange background'`, `'yellow background'`, `'aqua background'`, `'purple background'`, `'grey foreground'`, `'green foreground'`, `'blue foreground'`, `'red foreground'`, `'orange foreground'`, `'yellow foreground'`, `'aqua foreground'`, `'purple foreground'`
+	-- 		-- vim.g.gruvbox_material_menu_selection_background = "blue"
+	-- 		-- vim.g.gruvbox_material_ui_contrast = "high"
+	-- 		-- vim.g.gruvbox_material_float_style = "dim" -- bright, dim
+	-- 		-- vim.g.gruvbox_material_diagnostic_text_highlight = 1
+	-- 		-- vim.g.gruvbox_material_diagnostic_line_highlight = 1
+	-- 		-- vim.g.gruvbox_material_diagnostic_virtual_text = "colored" -- 'grey'`, `'colored'`, `'highlighted'`
+	-- 		-- vim.g.gruvbox_material_current_word = "bold" -- 'grey background'`, `'bold'`, `'underline'`, `'italic'`
+
+	-- 		-- vim.cmd([[colorscheme gruvbox-material]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"projekt0n/github-nvim-theme",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("github-theme").setup({
+	-- 			options = {
+	-- 				-- Compiled file's destination location
+	-- 				compile_path = vim.fn.stdpath("cache") .. "/github-theme",
+	-- 				compile_file_suffix = "_compiled", -- Compiled file suffix
+	-- 				hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look
+	-- 				hide_nc_statusline = true, -- Override the underline style for non-active statuslines
+	-- 				transparent = false, -- Disable setting background
+	-- 				terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+	-- 				dim_inactive = false, -- Non focused panes set to alternative background
+	-- 				module_default = true, -- Default enable value for modules
+	-- 				styles = { -- Style to be applied to different syntax groups
+	-- 					comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
+	-- 					functions = "NONE",
+	-- 					keywords = "NONE",
+	-- 					variables = "NONE",
+	-- 					conditionals = "NONE",
+	-- 					constants = "NONE",
+	-- 					numbers = "NONE",
+	-- 					operators = "NONE",
+	-- 					strings = "NONE",
+	-- 					types = "NONE",
+	-- 				},
+	-- 				inverse = { -- Inverse highlight for different types
+	-- 					match_paren = false,
+	-- 					visual = false,
+	-- 					search = false,
+	-- 				},
+	-- 				darken = { -- Darken floating windows and sidebar-like windows
+	-- 					floats = false,
+	-- 					sidebars = {
+	-- 						enabled = true,
+	-- 						list = {}, -- Apply dark background to specific windows
+	-- 					},
+	-- 				},
+	-- 				modules = { -- List of various plugins and additional options
+	-- 					-- ...
+	-- 				},
+	-- 			},
+	-- 			palettes = {},
+	-- 			specs = {},
+	-- 			groups = {},
+	-- 		})
+
+	-- 		vim.cmd("colorscheme github_dark_default")
+	-- 	end,
+	-- },
+    {
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
 		dependencies = {
@@ -188,7 +250,7 @@ require("lazy").setup({
 	{ "laytan/cloak.nvim" },
 	{ "nvim-lualine/lualine.nvim" },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	-- { 'akinsho/bufferline.nvim',            version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
 	{

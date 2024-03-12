@@ -1,7 +1,7 @@
 local lsp = require("lsp-zero").preset({})
 
 lsp.on_attach(function(client, bufnr)
-	vim.keymap.set("n", "<leader>ca", function()
+	vim.keymap.set({"n", "v"}, "<leader>ca", function()
 		vim.lsp.buf.code_action()
 	end, { desc = "[C]ode [A]ction", buffer = bufnr, silent = true })
 

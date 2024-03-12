@@ -1,7 +1,7 @@
 local lsp = require("lsp-zero").preset({})
 
 lsp.on_attach(function(client, bufnr)
-	vim.keymap.set({"n", "v"}, "<leader>ca", function()
+	vim.keymap.set({ "n", "v" }, "<leader>ca", function()
 		vim.lsp.buf.code_action()
 	end, { desc = "[C]ode [A]ction", buffer = bufnr, silent = true })
 
@@ -167,6 +167,8 @@ cmp.setup({
 		{ name = "nvim_lsp_signature_help" },
 		-- { name = 'cmp_tabnine' },
 		{ name = "crates" },
+		{ name = "treesitter" },
+		{ name = "copilot" },
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -198,6 +200,13 @@ cmp.setup({
 	window = {
 		completion = {
 			border = "rounded",
+			-- max_width = 10,
+			-- max_height = 10,
+			-- completion = {
+			-- 	border = "rounded",
+			-- 	max_width = 10,
+			-- 	max_height = 10,
+			-- },
 		},
 		documentation = {
 			border = "rounded",

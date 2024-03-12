@@ -40,7 +40,7 @@ require("lazy").setup({
 				no_underline = false, -- Force no underline
 				styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
 					comments = { "italic" }, -- Change the style of comments
-					conditionals = { },
+					conditionals = {},
 					loops = {},
 					functions = {},
 					keywords = {},
@@ -114,7 +114,14 @@ require("lazy").setup({
 					-- 	crust = "#141617",
 					-- },
 				},
-				custom_highlights = {},
+				highlight_overrides = {
+					-- mocha = function(mocha)
+					-- 	return {
+					-- 		Comment = { fg = mocha.overlay0 },
+     --                        text = { fg = mocha.subtext1 },
+					-- 	}
+					-- end,
+				},
 				integrations = {
 					cmp = true,
 					telescope = true,
@@ -124,6 +131,9 @@ require("lazy").setup({
 					treesitter = true,
 					alpha = true,
 					notify = false,
+					neogit = true,
+					navic = true,
+					mason = true,
 					mini = {
 						enabled = true,
 						indentscope_color = "",
@@ -157,70 +167,19 @@ require("lazy").setup({
 	-- 	"sainnhe/gruvbox-material",
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		-- vim.g.gruvbox_material_background = "soft"
-	-- 		-- vim.g.gruvbox_material_foreground = "mix"
-	-- 		-- vim.g.gruvbox_material_cursor = "blue" -- 'auto'`, `'red'`, `'orange'`, `'yellow'`, `'green'`, `'aqua'`, `'blue'`, `'purple'`
-	-- 		-- vim.g.gruvbox_material_visual = "blue background" -- `'grey background'`, `'green background'`, `'blue background'`, `'red background'`, `'orange background'`, `'yellow background'`, `'aqua background'`, `'purple background'`, `'grey foreground'`, `'green foreground'`, `'blue foreground'`, `'red foreground'`, `'orange foreground'`, `'yellow foreground'`, `'aqua foreground'`, `'purple foreground'`
-	-- 		-- vim.g.gruvbox_material_menu_selection_background = "blue"
-	-- 		-- vim.g.gruvbox_material_ui_contrast = "high"
-	-- 		-- vim.g.gruvbox_material_float_style = "dim" -- bright, dim
-	-- 		-- vim.g.gruvbox_material_diagnostic_text_highlight = 1
-	-- 		-- vim.g.gruvbox_material_diagnostic_line_highlight = 1
-	-- 		-- vim.g.gruvbox_material_diagnostic_virtual_text = "colored" -- 'grey'`, `'colored'`, `'highlighted'`
-	-- 		-- vim.g.gruvbox_material_current_word = "bold" -- 'grey background'`, `'bold'`, `'underline'`, `'italic'`
+	-- 		vim.g.gruvbox_material_background = "hard"
+	-- 		vim.g.gruvbox_material_foreground = "mix"
+	-- 		vim.g.gruvbox_material_cursor = "blue" -- 'auto'`, `'red'`, `'orange'`, `'yellow'`, `'green'`, `'aqua'`, `'blue'`, `'purple'`
+	-- 		vim.g.gruvbox_material_visual = "blue background" -- `'grey background'`, `'green background'`, `'blue background'`, `'red background'`, `'orange background'`, `'yellow background'`, `'aqua background'`, `'purple background'`, `'grey foreground'`, `'green foreground'`, `'blue foreground'`, `'red foreground'`, `'orange foreground'`, `'yellow foreground'`, `'aqua foreground'`, `'purple foreground'`
+	-- 		vim.g.gruvbox_material_menu_selection_background = "blue"
+	-- 		vim.g.gruvbox_material_ui_contrast = "high"
+	-- 		vim.g.gruvbox_material_float_style = "dim" -- bright, dim
+	-- 		vim.g.gruvbox_material_diagnostic_text_highlight = 1
+	-- 		vim.g.gruvbox_material_diagnostic_line_highlight = 1
+	-- 		vim.g.gruvbox_material_diagnostic_virtual_text = "colored" -- 'grey'`, `'colored'`, `'highlighted'`
+	-- 		vim.g.gruvbox_material_current_word = "bold" -- 'grey background'`, `'bold'`, `'underline'`, `'italic'`
 
-	-- 		-- vim.cmd([[colorscheme gruvbox-material]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"projekt0n/github-nvim-theme",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("github-theme").setup({
-	-- 			options = {
-	-- 				-- Compiled file's destination location
-	-- 				compile_path = vim.fn.stdpath("cache") .. "/github-theme",
-	-- 				compile_file_suffix = "_compiled", -- Compiled file suffix
-	-- 				hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look
-	-- 				hide_nc_statusline = true, -- Override the underline style for non-active statuslines
-	-- 				transparent = false, -- Disable setting background
-	-- 				terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-	-- 				dim_inactive = false, -- Non focused panes set to alternative background
-	-- 				module_default = true, -- Default enable value for modules
-	-- 				styles = { -- Style to be applied to different syntax groups
-	-- 					comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
-	-- 					functions = "NONE",
-	-- 					keywords = "NONE",
-	-- 					variables = "NONE",
-	-- 					conditionals = "NONE",
-	-- 					constants = "NONE",
-	-- 					numbers = "NONE",
-	-- 					operators = "NONE",
-	-- 					strings = "NONE",
-	-- 					types = "NONE",
-	-- 				},
-	-- 				inverse = { -- Inverse highlight for different types
-	-- 					match_paren = false,
-	-- 					visual = false,
-	-- 					search = false,
-	-- 				},
-	-- 				darken = { -- Darken floating windows and sidebar-like windows
-	-- 					floats = false,
-	-- 					sidebars = {
-	-- 						enabled = true,
-	-- 						list = {}, -- Apply dark background to specific windows
-	-- 					},
-	-- 				},
-	-- 				modules = { -- List of various plugins and additional options
-	-- 					-- ...
-	-- 				},
-	-- 			},
-	-- 			palettes = {},
-	-- 			specs = {},
-	-- 			groups = {},
-	-- 		})
-
-	-- 		vim.cmd("colorscheme github_dark_default")
+	-- 		vim.cmd([[colorscheme gruvbox-material]])
 	-- 	end,
 	-- },
 	{

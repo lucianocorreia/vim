@@ -230,6 +230,17 @@ local txt_formatter = {
 	}),
 }
 
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+		border = "rounded",
+	},
+})
+
 null_ls.setup({
 	on_attach = function(client, bufnr)
 		null_opts.on_attach(client, bufnr)

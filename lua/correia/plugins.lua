@@ -88,8 +88,8 @@ require("lazy").setup({
 					mocha = {
 						rosewater = "#ea6962",
 						flamingo = "#ea6962",
-						red = "#ea6962",
-						maroon = "#ea6962",
+						red = "#e78a4e",
+						maroon = "#d5c4a1",
 						pink = "#d3869b",
 						mauve = "#d3869b",
 						peach = "#e78a4e",
@@ -118,7 +118,8 @@ require("lazy").setup({
 					mocha = function(mocha)
 						return {
 							Comment = { fg = mocha.overlay0 },
-			                         text = { fg = mocha.subtext1 },
+							text = { fg = mocha.subtext1 },
+                            Error = { fg = mocha.flamingo },
 						}
 					end,
 				},

@@ -88,7 +88,7 @@ require("lazy").setup({
 					mocha = {
 						rosewater = "#ea6962",
 						flamingo = "#ea6962",
-						red = "#e78a4e",
+						red = "#ea6962",
 						maroon = "#d5c4a1",
 						pink = "#d3869b",
 						mauve = "#d3869b",
@@ -117,9 +117,10 @@ require("lazy").setup({
 				highlight_overrides = {
 					mocha = function(mocha)
 						return {
-							Comment = { fg = mocha.overlay0 },
+							-- Comment = { fg = mocha.overlay0 },
 							text = { fg = mocha.subtext1 },
-                            Error = { fg = mocha.flamingo },
+							-- Error = { fg = mocha.flamingo },
+							["@comment"] = { fg = mocha.overlay0, style = { "italic" } },
 						}
 					end,
 				},
@@ -135,10 +136,10 @@ require("lazy").setup({
 					neogit = true,
 					navic = true,
 					mason = true,
-					mini = {
-						enabled = true,
-						indentscope_color = "",
-					},
+					-- mini = {
+					-- 	enabled = true,
+					-- 	indentscope_color = "",
+					-- },
 					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 				},
 			})

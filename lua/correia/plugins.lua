@@ -119,8 +119,10 @@ require("lazy").setup({
 						return {
 							-- Comment = { fg = mocha.overlay0 },
 							text = { fg = mocha.subtext1 },
+                            number = { fg = mocha.sky },
 							-- Error = { fg = mocha.flamingo },
 							["@comment"] = { fg = mocha.overlay0, style = { "italic" } },
+							["@numbers"] = { fg = mocha.sky },
 						}
 					end,
 				},

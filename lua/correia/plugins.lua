@@ -54,73 +54,73 @@ require("lazy").setup({
 					-- miscs = {}, -- Uncomment to turn off hard-coded styles
 				},
 				color_overrides = {
-					mocha = {
-						rosewater = "#f5e0dc",
-						flamingo = "#f2cdcd",
-						pink = "#f5c2e7",
-						-- mauve = "#eba0ac",
-						red = "#f38ba8",
-						maroon = "#eba0ac",
-						peach = "#fab387",
-						yellow = "#f9e2af",
-						green = "#a6e3a1",
-						teal = "#94e2d5",
-						sky = "#89dceb",
-						sapphire = "#74c7ec",
-						blue = "#89b4fa",
-						lavender = "#b4befe",
-						text = "#cdd6f4",
-						subtext1 = "#bac2de",
-						subtext0 = "#a6adc8",
-						overlay2 = "#9399b2",
-						overlay1 = "#7f849c",
-						overlay0 = "#6c7086",
-						surface2 = "#585b70",
-						surface1 = "#45475a",
-						surface0 = "#313244",
-						-- base = "#1e1e2e",
-						-- mantle = "#181825",
-						-- crust = "#11111b",
-						base = "#181825",
-						mantle = "#181825",
-						crust = "#181825",
-					},
 					-- mocha = {
-					-- 	rosewater = "#ea6962",
-					-- 	flamingo = "#ea6962",
-					-- 	red = "#ea6962",
-					-- 	maroon = "#ea6962",
-					-- 	pink = "#d3869b",
-					-- 	mauve = "#d3869b",
-					-- 	peach = "#e78a4e",
-					-- 	yellow = "#d8a657",
-					-- 	green = "#a9b665",
-					-- 	teal = "#89b482",
-					-- 	sky = "#89b482",
-					-- 	sapphire = "#89b482",
-					-- 	blue = "#7daea3",
-					-- 	lavender = "#7daea3",
-					-- 	text = "#ebdbb2",
-					-- 	subtext1 = "#d5c4a1",
-					-- 	subtext0 = "#bdae93",
-					-- 	overlay2 = "#a89984",
-					-- 	overlay1 = "#928374",
-					-- 	overlay0 = "#595959",
-					-- 	surface2 = "#4d4d4d",
-					-- 	surface1 = "#404040",
-					-- 	surface0 = "#292929",
-					-- 	base = "#1d2021",
-					-- 	mantle = "#191b1c",
-					-- 	crust = "#141617",
+					-- 	rosewater = "#f5e0dc",
+					-- 	flamingo = "#f2cdcd",
+					-- 	pink = "#f5c2e7",
+					-- 	-- mauve = "#eba0ac",
+					-- 	red = "#f38ba8",
+					-- 	maroon = "#eba0ac",
+					-- 	peach = "#fab387",
+					-- 	yellow = "#f9e2af",
+					-- 	green = "#a6e3a1",
+					-- 	teal = "#94e2d5",
+					-- 	sky = "#89dceb",
+					-- 	sapphire = "#74c7ec",
+					-- 	blue = "#89b4fa",
+					-- 	lavender = "#b4befe",
+					-- 	text = "#cdd6f4",
+					-- 	subtext1 = "#bac2de",
+					-- 	subtext0 = "#a6adc8",
+					-- 	overlay2 = "#9399b2",
+					-- 	overlay1 = "#7f849c",
+					-- 	overlay0 = "#6c7086",
+					-- 	surface2 = "#585b70",
+					-- 	surface1 = "#45475a",
+					-- 	surface0 = "#313244",
+					-- 	-- base = "#1e1e2e",
+					-- 	-- mantle = "#181825",
+					-- 	-- crust = "#11111b",
+					-- 	base = "#181825",
+					-- 	mantle = "#181825",
+					-- 	crust = "#181825",
 					-- },
+					mocha = {
+						rosewater = "#ea6962",
+						flamingo = "#ea6962",
+						red = "#ea6962",
+						maroon = "#ea6962",
+						pink = "#d3869b",
+						mauve = "#d3869b",
+						peach = "#e78a4e",
+						yellow = "#d8a657",
+						green = "#a9b665",
+						teal = "#89b482",
+						sky = "#89b482",
+						sapphire = "#89b482",
+						blue = "#7daea3",
+						lavender = "#7daea3",
+						text = "#ebdbb2",
+						subtext1 = "#d5c4a1",
+						subtext0 = "#bdae93",
+						overlay2 = "#a89984",
+						overlay1 = "#928374",
+						overlay0 = "#595959",
+						surface2 = "#4d4d4d",
+						surface1 = "#404040",
+						surface0 = "#292929",
+						base = "#1d2021",
+						mantle = "#191b1c",
+						crust = "#141617",
+					},
 				},
 				highlight_overrides = {
-					-- mocha = function(mocha)
-					-- 	return {
-					-- 		Comment = { fg = mocha.overlay0 },
-     --                        text = { fg = mocha.subtext1 },
-					-- 	}
-					-- end,
+					mocha = function(mocha)
+						return {
+							Comment = { fg = mocha.overlay0 },
+			                         text = { fg = mocha.subtext1 },
+						}
+					end,
 				},
 				integrations = {
 					cmp = true,
@@ -150,17 +150,18 @@ require("lazy").setup({
 	-- 	"sainnhe/everforest",
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		-- vim.g.everforest_background = "hard"
-	-- 		-- vim.g.everforest_enable_italic = 1
-	-- 		-- vim.g.everforest_diagnostic_text_highlight = 1
-	-- 		-- vim.g.everforest_diagnostic_virtual_text = "colored"
-	-- 		-- vim.g.everforest_diagnostic_line_highlight = 1
-	-- 		-- vim.g.everforest_current_word = "bold"
-	-- 		-- vim.g.everforest_ui_contrast = "high"
-	-- 		-- vim.g.show_eob = 1
-	-- 		-- vim.geverforest_float_style = "dim"
-	-- 		-- vim.g.everforest_better_performance = 1
-	-- 		-- vim.cmd([[colorscheme everforest]])
+	-- 		vim.g.everforest_background = "hard"
+	-- 		vim.g.everforest_enable_italic = 1
+	-- 		vim.g.everforest_diagnostic_text_highlight = 1
+	-- 		vim.g.everforest_diagnostic_virtual_text = "colored"
+	-- 		vim.g.everforest_diagnostic_line_highlight = 1
+	-- 		vim.g.everforest_current_word = "bold"
+	-- 		vim.g.everforest_ui_contrast = "high"
+	-- 		vim.g.show_eob = 1
+	-- 		vim.geverforest_float_style = "dim"
+	-- 		vim.g.everforest_better_performance = 1
+
+	-- 		vim.cmd([[colorscheme everforest]])
 	-- 	end,
 	-- },
 	-- {

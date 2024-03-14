@@ -160,9 +160,9 @@ require("lazy").setup({
             vim.g.everforest_diagnostic_virtual_text = "colored"
             vim.g.everforest_diagnostic_line_highlight = 1
             vim.g.everforest_current_word = "bold"
-            vim.g.everforest_ui_contrast = "high"
+            vim.g.everforest_ui_contrast = "low"
             vim.g.show_eob = 1
-            vim.geverforest_float_style = "dim"
+            vim.g.everforest_float_style = "dim"
             vim.g.everforest_better_performance = 1
             vim.g.everforest_colors_override = {
                 bg0 = { '#1e2326', '235' },

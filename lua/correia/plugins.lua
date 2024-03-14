@@ -198,9 +198,9 @@ require("lazy").setup({
 			{ "jay-babu/mason-nvim-dap.nvim" },
 			{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 
-			-- null-ls
-			{ "jose-elias-alvarez/null-ls.nvim" },
-			{ "jay-babu/mason-null-ls.nvim" },
+			-- -- null-ls
+			-- { "jose-elias-alvarez/null-ls.nvim" },
+			-- { "jay-babu/mason-null-ls.nvim" },
 
 			-- Autocompletion
 			{
@@ -231,7 +231,6 @@ require("lazy").setup({
 			-- other languages
 			{ "fatih/vim-go" },
 			{ "rrethy/vim-illuminate" },
-			{ "jlcrochet/vim-razor" },
 
 			-- rust
 			{

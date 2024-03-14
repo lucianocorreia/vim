@@ -166,6 +166,7 @@ require("lazy").setup({
             vim.g.everforest_better_performance = 1
             vim.g.everforest_colors_override = {
                 bg0 = { '#1e2326', '235' },
+                bg1 = { '#272e33', '236' },
                 grey1 = { '#859289', '247' },
                 grey0 = { '#414b50', '243' },
             }

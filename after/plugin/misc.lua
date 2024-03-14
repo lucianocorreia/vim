@@ -129,7 +129,7 @@ require("ibl").setup({
 	--     remove_blankline_trail = false,
 	-- },
 	-- indent = { highlight = { "LineNr" }, char = "│" },
-	indent = { char = "│", highlight = { "LineNr" } },
+	-- indent = { char = "│", highlight = { "LineNr" } },
 	scope = { enabled = false },
 })
 

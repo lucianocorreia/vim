@@ -268,6 +268,9 @@ require("lazy").setup({
                 highlight_groups = {
                     -- Comment = { fg = "foam" },
                     -- VertSplit = { fg = "muted", bg = "muted" },
+                    -- IlluminatedWordText = { fg = "rose", bg = "none" },
+                    -- IlluminatedWordRead = { fg = "rose", bg = "none" },
+                    -- IlluminatedWordWrite = { fg = "rose", bg = "none" },
                 },
 
                 before_highlight = function(group, highlight, palette)

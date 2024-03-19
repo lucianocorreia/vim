@@ -398,6 +398,7 @@ require("lazy").setup({
 
     -- Debugging
     { "mfussenegger/nvim-dap" },
+    { "nvim-neotest/nvim-nio" },
     { "rcarriga/nvim-dap-ui" },
     { "theHamsta/nvim-dap-virtual-text" },
     { "nvim-telescope/telescope-dap.nvim" },

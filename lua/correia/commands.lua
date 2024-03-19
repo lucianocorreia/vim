@@ -15,7 +15,7 @@ local run_commands = {
 
 local test_commands = {
   rust = "cargo test",
-  go = "%:p:r.o",
+  go = "go test -v -cover ./...",
 }
 
 vim.api.nvim_create_user_command("Build", function()

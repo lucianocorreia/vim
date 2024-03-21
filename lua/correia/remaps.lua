@@ -89,7 +89,7 @@ nnoremap("<leader>oq", "<cmd>set nowrap<cr>", { desc = "Toggle [O]verflow (wrap)
 
 -- misc
 nnoremap("<leader>rp", ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>", { desc = "Replace [P]attern" })
-nnoremap("<leader>ww", "<Cmd>w<CR>", { desc = "Save [W]rite" })
+nnoremap("<leader>w", "<Cmd>w<CR>", { desc = "Save [W]rite" })
 
 -- Running Code
 nnoremap("<leader>cb", "<Cmd>Build<CR>", { desc = "Build", silent = true })

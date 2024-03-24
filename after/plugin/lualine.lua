@@ -4,7 +4,6 @@ require("lualine").setup({
         icons_enabled = true,
         -- theme = 'everforest',
         theme = 'catppuccin',
-        -- theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
     },

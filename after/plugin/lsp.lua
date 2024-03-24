@@ -116,6 +116,10 @@ lspconfig["tailwindcss"].setup({
     },
 })
 
+-- vim.g.LanguageClient_serverCommands = {
+--     vue = { 'vls' }
+-- }
+
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type

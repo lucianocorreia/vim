@@ -350,6 +350,9 @@ require("lazy").setup({
                     require("crates").setup()
                 end,
             },
+
+            -- c#!/usr/bin/env lua
+            { "Hoffs/omnisharp-extended-lsp.nvim" }
         },
     },
 

@@ -116,6 +116,21 @@ lspconfig["tailwindcss"].setup({
     },
 })
 
+lspconfig["omnisharp"].setup({
+    enable_editorconfig_support = true,
+    enable_roslyn_analyzers = true,
+    organize_imports_on_format = true,
+    enable_import_completion = true,
+    analyze_open_documents_only = false,
+    filetypes = { "cs", "vb" },
+    handlers = {
+        ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+        ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+        ["textDocument/references"] = require('omnisharp_extended').references_handler,
+        ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+    },
+})
+
 -- vim.g.LanguageClient_serverCommands = {
 --     vue = { 'vls' }
 -- }
